@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import heroRef from "@assets/UNLV_Volleyball_—_Stadium_Energy_Homepage_1777519729850.jpg";
+import VimeoBackground from "@/components/VimeoBackground";
 import { useEffect } from "react";
+
+const VIMEO_ID = "1187950924";
 
 export default function CrimsonCourt() {
   useEffect(() => {
@@ -63,21 +65,18 @@ export default function CrimsonCourt() {
           </div>
         </div>
 
-        {/* Right: Image panel */}
+        {/* Right: Video panel */}
         <motion.div
-          className="relative overflow-hidden order-first md:order-last h-[45vw] md:h-auto"
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="relative overflow-hidden order-first md:order-last h-[50vw] md:h-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
         >
-          <img
-            src={heroRef}
-            alt="UNLV Volleyball Arena"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent md:from-transparent" />
+          <VimeoBackground videoId={VIMEO_ID} opacity={1} />
+          {/* Subtle left-edge blend into the white content panel */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent md:from-transparent pointer-events-none" />
           {/* Red accent bar */}
-          <div className="absolute top-0 left-0 w-2 h-full bg-[#CC0000]" />
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#CC0000] z-10" />
         </motion.div>
       </section>
 
