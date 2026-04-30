@@ -4,11 +4,13 @@ import {
   useScroll,
   useTransform,
   useSpring,
-  useMotionTemplate,
 } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import heroRef from "@assets/UNLV_Volleyball_—_Stadium_Energy_Homepage_1777519729850.jpg";
+import VimeoBackground from "@/components/VimeoBackground";
 import { useEffect } from "react";
+
+const VIMEO_ID = "1187950924";
 
 /* ── Marquee strip ─────────────────────────────────────────────────── */
 const MARQUEE_ITEMS = [
@@ -74,14 +76,10 @@ export default function StadiumEnergy() {
   const smoothScroll = useSpring(scrollY, { stiffness: 80, damping: 25 });
 
   // Three layers moving at different speeds
-  const imgY      = useTransform(smoothScroll, [0, 900], [0, 140]);   // slowest
-  const glowY     = useTransform(smoothScroll, [0, 900], [0, 70]);    // mid
-  const heroTextY = useTransform(smoothScroll, [0, 900], [0, 260]);   // fastest
+  const videoY    = useTransform(smoothScroll, [0, 900], [0, 140]);   // slowest — video
+  const glowY     = useTransform(smoothScroll, [0, 900], [0, 70]);    // mid — gradient
+  const heroTextY = useTransform(smoothScroll, [0, 900], [0, 260]);   // fastest — text
   const heroOpacity = useTransform(scrollY, [0, 480], [1, 0]);
-
-  // Clip-path progress for image reveal
-  const clipProgress = useTransform(scrollY, [0, 500], [100, 115]);
-  const clip = useMotionTemplate`circle(${clipProgress}% at 50% 40%)`;
 
   // Section refs for in-section scroll
   const pitchRef = useRef<HTMLElement>(null);
@@ -102,16 +100,12 @@ export default function StadiumEnergy() {
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[100dvh] w-full flex items-end justify-start overflow-hidden">
 
-        {/* Layer 1 — Background image (slowest) */}
+        {/* Layer 1 — Background video (slowest) */}
         <motion.div
           className="absolute inset-0 z-0"
-          style={{ y: imgY, clipPath: clip }}
+          style={{ y: videoY }}
         >
-          <img
-            src={heroRef}
-            alt="UNLV Volleyball Arena"
-            className="w-full h-[125%] object-cover object-center opacity-50"
-          />
+          <VimeoBackground videoId={VIMEO_ID} opacity={0.55} />
         </motion.div>
 
         {/* Layer 2 — Gradient vignette (mid speed) */}

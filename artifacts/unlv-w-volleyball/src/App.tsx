@@ -5,14 +5,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import StadiumEnergy from "@/pages/StadiumEnergy";
 import CrimsonCourt from "@/pages/CrimsonCourt";
-import DesertGold from "@/pages/DesertGold";
 
 const queryClient = new QueryClient();
 
 const DESIGNS = [
   { path: "/", label: "Stadium Energy", num: "01" },
   { path: "/crimson-court", label: "Crimson Court", num: "02" },
-  { path: "/desert-gold", label: "Desert Gold", num: "03" },
 ] as const;
 
 function DesignSwitcherNav() {
@@ -45,7 +43,7 @@ function DesignSwitcherNav() {
 
 function AppNav() {
   const [location] = useLocation();
-  const isDark = location === "/" || location === "/desert-gold";
+  const isDark = location === "/";
 
   return (
     <nav
@@ -116,7 +114,6 @@ function Router() {
       <Switch>
         <Route path="/" component={StadiumEnergy} />
         <Route path="/crimson-court" component={CrimsonCourt} />
-        <Route path="/desert-gold" component={DesertGold} />
         <Route component={NotFound} />
       </Switch>
     </>
