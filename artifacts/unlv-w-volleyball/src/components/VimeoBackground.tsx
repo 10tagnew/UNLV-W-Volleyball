@@ -14,7 +14,7 @@ interface VimeoBackgroundProps {
  */
 const VimeoBackground = forwardRef<HTMLDivElement, VimeoBackgroundProps>(
   ({ videoId, className = "", opacity = 1 }, ref) => {
-    const src = `https://player.vimeo.com/video/${videoId}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&dnt=1`;
+    const src = `https://player.vimeo.com/video/${videoId}?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0&dnt=1#t=15s`;
 
     return (
       <div
