@@ -120,10 +120,15 @@ export default function Academics() {
               At UNLV, you don't just compete in one of college volleyball's most electric programs. You earn a degree from one of the fastest-rising research universities in the country.
             </p>
 
-            <button className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors">
+            <a
+              href="https://www.unlv.edu/academics"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors"
+            >
               Explore Programs
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -306,10 +311,15 @@ export default function Academics() {
             <p className="font-['Inter'] text-lg md:text-xl text-white/75 leading-relaxed font-light max-w-2xl mb-12">
               A UNLV Women's Volleyball scholarship is more than a chance to compete. It is an invitation to one of the West's great universities, in one of the world's most electrifying cities. Come build something that has never been built before.
             </p>
-            <button className="group inline-flex items-center gap-3 bg-white text-[#CC0000] px-12 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#0d0d0d] hover:text-white transition-colors">
+            <a
+              href="https://unlvrebels.com/sports/womens-volleyball"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-white text-[#CC0000] px-12 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#0d0d0d] hover:text-white transition-colors"
+            >
               Get Recruited
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
