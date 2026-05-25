@@ -1,47 +1,16 @@
+import { useState } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import StadiumEnergy from "@/pages/StadiumEnergy";
-import CrimsonCourt from "@/pages/CrimsonCourt";
+import Academics from "@/pages/Academics";
+import FullPageNav from "@/components/FullPageNav";
 
 const queryClient = new QueryClient();
 
-const DESIGNS = [
-  { path: "/", label: "Stadium Energy", num: "01" },
-  { path: "/crimson-court", label: "Crimson Court", num: "02" },
-] as const;
-
-function DesignSwitcherNav() {
-  const [location, setLocation] = useLocation();
-
-  return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] flex items-center gap-1 bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-2 py-1.5 shadow-xl">
-      {DESIGNS.map((design) => {
-        const active = location === design.path;
-        return (
-          <button
-            key={design.path}
-            onClick={() => setLocation(design.path)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black tracking-[0.15em] uppercase transition-all duration-200 ${
-              active
-                ? "bg-[#CC0000] text-white"
-                : "text-white/50 hover:text-white hover:bg-white/8"
-            }`}
-          >
-            <span className={`text-[8px] ${active ? "text-white/70" : "text-white/30"}`}>
-              {design.num}
-            </span>
-            {design.label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-function AppNav() {
+function AppNav({ onMenuOpen }: { onMenuOpen: () => void }) {
   const [location] = useLocation();
   const isDark = location === "/";
 
@@ -53,24 +22,21 @@ function AppNav() {
           : "bg-white/90 border-black/8"
       }`}
     >
-      <div className="flex items-center gap-4">
-        <div
-          className={`w-9 h-9 flex items-center justify-center rounded-sm transition-colors duration-300 ${
-            isDark ? "bg-[#CC0000]" : "bg-[#CC0000]"
-          }`}
-        >
-          <span className="font-[Barlow_Condensed] text-white text-xl font-black">R</span>
+      {/* Logo */}
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 bg-[#CC0000] flex items-center justify-center rounded-sm">
+          <span className="font-['Bebas_Neue'] text-white text-xl leading-none">R</span>
         </div>
         <div className="flex flex-col">
           <span
-            className={`text-[10px] font-black tracking-[0.2em] uppercase transition-colors duration-300 ${
+            className={`text-[10px] font-['Inter'] font-bold tracking-[0.2em] uppercase transition-colors duration-300 ${
               isDark ? "text-white/90" : "text-[#0d0d0d]/90"
             }`}
           >
             Rebels Volleyball
           </span>
           <span
-            className={`text-[8px] tracking-[0.15em] uppercase transition-colors duration-300 ${
+            className={`text-[8px] font-['Inter'] tracking-[0.15em] uppercase transition-colors duration-300 ${
               isDark ? "text-white/40" : "text-black/40"
             }`}
           >
@@ -79,41 +45,47 @@ function AppNav() {
         </div>
       </div>
 
-      <div className="flex items-center gap-6">
-        {["Schedule", "Roster", "Recruiting", "Contact"].map((item) => (
-          <button
-            key={item}
-            className={`hidden md:block text-[10px] font-black tracking-[0.2em] uppercase transition-colors duration-300 ${
-              isDark ? "text-white/60 hover:text-white" : "text-black/50 hover:text-black"
-            }`}
-          >
-            {item}
-          </button>
-        ))}
-        <button
-          className={`flex flex-col gap-[5px] group`}
-          data-testid="button-menu"
+      {/* Hamburger */}
+      <button
+        onClick={onMenuOpen}
+        className="flex items-center gap-3 group"
+        aria-label="Open navigation"
+        data-testid="button-menu"
+      >
+        <span
+          className={`font-['Inter'] text-[10px] font-bold tracking-[0.25em] uppercase transition-colors hidden sm:block ${
+            isDark ? "text-white/50 group-hover:text-white" : "text-black/40 group-hover:text-black"
+          }`}
         >
+          Menu
+        </span>
+        <div className="flex flex-col gap-[5px] p-1">
           <div
-            className={`w-5 h-[2px] transition-colors ${isDark ? "bg-white/70 group-hover:bg-white" : "bg-black/70 group-hover:bg-black"}`}
+            className={`w-5 h-[2px] transition-colors ${
+              isDark ? "bg-white/70 group-hover:bg-white" : "bg-black/60 group-hover:bg-black"
+            }`}
           />
           <div
-            className={`w-5 h-[2px] transition-colors ${isDark ? "bg-white/70 group-hover:bg-white" : "bg-black/70 group-hover:bg-black"}`}
+            className={`w-5 h-[2px] transition-colors ${
+              isDark ? "bg-white/70 group-hover:bg-white" : "bg-black/60 group-hover:bg-black"
+            }`}
           />
-        </button>
-      </div>
+        </div>
+      </button>
     </nav>
   );
 }
 
 function Router() {
+  const [navOpen, setNavOpen] = useState(false);
+
   return (
     <>
-      <AppNav />
-      <DesignSwitcherNav />
+      <AppNav onMenuOpen={() => setNavOpen(true)} />
+      <FullPageNav open={navOpen} onClose={() => setNavOpen(false)} />
       <Switch>
         <Route path="/" component={StadiumEnergy} />
-        <Route path="/crimson-court" component={CrimsonCourt} />
+        <Route path="/academics" component={Academics} />
         <Route component={NotFound} />
       </Switch>
     </>
