@@ -5,12 +5,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import StadiumEnergy from "@/pages/StadiumEnergy";
 import CrimsonCourt from "@/pages/CrimsonCourt";
+import Academics from "@/pages/Academics";
 
 const queryClient = new QueryClient();
 
 const DESIGNS = [
   { path: "/", label: "Stadium Energy", num: "01" },
   { path: "/crimson-court", label: "Crimson Court", num: "02" },
+  { path: "/academics", label: "Academics", num: "03" },
 ] as const;
 
 function DesignSwitcherNav() {
@@ -114,6 +116,7 @@ function Router() {
       <Switch>
         <Route path="/" component={StadiumEnergy} />
         <Route path="/crimson-court" component={CrimsonCourt} />
+        <Route path="/academics" component={Academics} />
         <Route component={NotFound} />
       </Switch>
     </>
