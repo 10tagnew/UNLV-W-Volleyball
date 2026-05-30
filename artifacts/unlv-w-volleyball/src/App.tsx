@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import StadiumEnergy from "@/pages/StadiumEnergy";
 import Academics from "@/pages/Academics";
+import CampusLife from "@/pages/CampusLife";
 import FullPageNav from "@/components/FullPageNav";
 
 const queryClient = new QueryClient();
@@ -86,6 +87,7 @@ function Router() {
       <Switch>
         <Route path="/" component={StadiumEnergy} />
         <Route path="/academics" component={Academics} />
+        <Route path="/campus-life" component={CampusLife} />
         <Route component={NotFound} />
       </Switch>
     </>
