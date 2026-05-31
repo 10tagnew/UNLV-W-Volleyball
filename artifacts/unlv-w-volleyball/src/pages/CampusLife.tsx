@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { useEffect } from "react";
 
-/* ── Word-by-word slide-up reveal (matches StadiumEnergy pattern) ─── */
+/* ── Word-by-word slide-up reveal ────────────────────────────────── */
 function WordReveal({ text, className }: { text: string; className?: string }) {
   const words = text.split(" ");
   return (
@@ -24,7 +24,7 @@ function WordReveal({ text, className }: { text: string; className?: string }) {
   );
 }
 
-/* ── Eyebrow line (matches StadiumEnergy pattern) ────────────────── */
+/* ── Eyebrow line ────────────────────────────────────────────────── */
 function Eyebrow({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-3 mb-8">
@@ -37,58 +37,56 @@ function Eyebrow({ text }: { text: string }) {
 }
 
 const STATS = [
-  { number: "78", label: "Majors Offered" },
-  { number: "197", label: "Graduate Programs" },
-  { number: "16", label: "Colleges & Schools" },
-  { number: "#1", label: "Hospitality Program in the World" },
-  { number: "$54K+", label: "Avg. Starting Salary" },
+  { number: "350+", label: "Acre Campus" },
+  { number: "300+", label: "Days of Sunshine" },
+  { number: "10 Min", label: "From the Strip" },
+  { number: "500+", label: "Student Organizations" },
+  { number: "#1", label: "Most Diverse University in the West" },
 ];
 
-const COLLEGES = [
+const CARDS = [
   {
-    name: "William F. Harrah College of Hospitality",
-    body: "Ranked among the top hospitality programs in the world, built in the hospitality capital of the planet.",
+    emoji: "🏐",
+    name: "Rebel Athletics Community",
+    body: "Cheer on your fellow Rebels across 17 varsity sports, including basketball at the Thomas and Mack Center in front of 10,000 fans.",
   },
   {
-    name: "Lee Business School",
-    body: "A comprehensive business program with tracks in finance, marketing, entrepreneurship, and management.",
+    emoji: "🎭",
+    name: "Arts and Entertainment",
+    body: "From world-class artists to notable speakers, UNLV hosts a wide variety of cultural and academic events open to the entire campus community.",
   },
   {
-    name: "William S. Boyd School of Law",
-    body: "One of the West's most respected law programs, with strong Nevada and national bar passage rates.",
+    emoji: "🌎",
+    name: "Diversity and Inclusion",
+    body: "UNLV has built one of the most affirmative and dynamic academic environments in the country, recognized as one of the most diverse universities in the nation by U.S. News and World Report.",
   },
   {
-    name: "College of Sciences",
-    body: "Rigorous programs across biology, chemistry, neuroscience, and kinesiology for science-focused athletes.",
+    emoji: "💪",
+    name: "Wellness and Fitness",
+    body: "From physical fitness to overall well-being, UNLV's wellness resources are designed to help you thrive in mind, body, and spirit.",
   },
   {
-    name: "Greenspun College of Urban Affairs",
-    body: "Journalism, film, communication, and social justice programs shaped by Las Vegas's unique media landscape.",
+    emoji: "🎓",
+    name: "500+ Student Organizations",
+    body: "Whether you want to lead, build, compete, or create, there is a community here waiting for you.",
   },
   {
-    name: "Kirk Kerkorian School of Medicine",
-    body: "UNLV's medical school preparing the next generation of physicians in one of the nation's fastest-growing cities.",
-  },
-  {
-    name: "Howard R. Hughes College of Engineering",
-    body: "Strong programs in computer science, civil, electrical, and mechanical engineering with growing industry ties.",
-  },
-  {
-    name: "Honors College",
-    body: "A selective program offering enhanced academic experiences for high-achieving student-athletes.",
+    emoji: "🏙️",
+    name: "Las Vegas",
+    body: "It is in our name, it is where we call home, and it is a big part of who we are. Where else can you experience over 300 days of sunshine, unparalleled networking, and a city that runs on ambition?",
   },
 ];
 
 const CHECKLIST = [
-  "Dedicated athletic academic counselors and priority advising",
-  "Tutoring and study hall resources through the Lied Athletic Complex",
-  "NCAA eligibility tracking and degree planning from day one",
-  "Access to career fairs, employer connections, and alumni networks",
-  "Online and hybrid learning options across multiple degree programs",
-  "78% freshman retention rate",
+  "On-campus housing with athlete-friendly environments",
+  "Campus safety and emergency resources available 24/7",
+  "Dedicated wellness and mental health support for student-athletes",
+  "RebelCard access to campus facilities, dining, and services",
+  "Campus located 10 minutes from the Las Vegas Strip with easy transit access",
+  "350+ acre campus with maps, parking, and resource centers",
 ];
 
-export default function Academics() {
+export default function CampusLife() {
   useEffect(() => {
     document.documentElement.classList.remove("dark");
     window.scrollTo(0, 0);
@@ -105,28 +103,28 @@ export default function Academics() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Eyebrow text="Las Vegas, Nevada · UNLV Academics" />
+            <Eyebrow text="Las Vegas, Nevada · Life as a Rebel" />
 
             <h1
               className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.88] mb-8"
               style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)" }}
             >
-              A Degree as Bold
+              The City Is
               <br />
-              <span className="text-[#CC0000]">as Your Game</span>
+              <span className="text-[#CC0000]">Your Campus</span>
             </h1>
 
             <p className="font-['Inter'] text-lg md:text-xl text-black/60 leading-relaxed max-w-2xl mb-10 font-light">
-              At UNLV, you don't just compete in one of college volleyball's most electric programs. You earn a degree from one of the fastest-rising research universities in the country.
+              At UNLV, your college experience does not end at the property line. You are 10 minutes from the Strip, 300 days of sunshine a year, and a city that never stops moving.
             </p>
 
             <a
-              href="https://www.unlv.edu/academics"
+              href="https://www.unlv.edu/student-life"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors"
             >
-              Explore Programs
+              See Campus Life
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
@@ -154,16 +152,16 @@ export default function Academics() {
         </div>
       </section>
 
-      {/* ── WORLD-CLASS ACADEMICS ─────────────────────────────────────── */}
+      {/* ── LIFE ON CAMPUS ────────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
-            <Eyebrow text="The University" />
+            <Eyebrow text="Campus Experience" />
             <h2
               className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="World-Class Academics. Right Here in Las Vegas." />
+              <WordReveal text="Life on Campus. Built Around You." />
             </h2>
           </div>
           <motion.div
@@ -174,32 +172,32 @@ export default function Academics() {
             className="pt-2"
           >
             <p className="font-['Inter'] text-base md:text-lg text-black/60 leading-relaxed font-light">
-              UNLV is more than Nevada's flagship research university. It is one of the most dynamic academic institutions in the American West, sitting at the center of a city that runs on innovation, hospitality, entertainment, and business. With 78 undergraduate majors and 197 graduate degree and certificate programs across 16 colleges and schools, UNLV gives you the flexibility to pursue any career path while competing at the highest level of college volleyball.
+              UNLV's campus gives you quick access to everything you need, with independent living and a built-in support system from day one. On-campus housing connects you with student-athletes and classmates from across the country, while dining, wellness, and recreation resources are steps away from where you train and study.
             </p>
             <p className="font-['Inter'] text-base md:text-lg text-black/50 leading-relaxed font-light mt-6">
-              As a Rebels student-athlete, you will study alongside future executives, entrepreneurs, physicians, and world-builders. The UNLV degree does not just open doors. It puts you in rooms most people never reach.
+              As a Rebel, you will never have to choose between being a great athlete and having a great college experience. We make sure you can be both.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── COLLEGES ─────────────────────────────────────────────────── */}
+      {/* ── GET INVOLVED CARDS ───────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#f7f7f7]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <Eyebrow text="Colleges & Schools" />
+            <Eyebrow text="Student Life" />
             <h2
               className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="Areas of Study. 16 Colleges. Unlimited Paths." />
+              <WordReveal text="Get Involved. This Is Your Program." />
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {COLLEGES.map((college, i) => (
+            {CARDS.map((card, i) => (
               <motion.div
-                key={college.name}
+                key={card.name}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -210,10 +208,11 @@ export default function Academics() {
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="font-['Barlow_Condensed'] text-xl md:text-2xl font-black uppercase text-[#0d0d0d] mb-3 leading-tight">
-                  {college.name}
+                  <span className="mr-2">{card.emoji}</span>
+                  {card.name}
                 </h3>
                 <p className="font-['Inter'] text-sm text-black/55 leading-relaxed font-light">
-                  {college.body}
+                  {card.body}
                 </p>
               </motion.div>
             ))}
@@ -221,16 +220,16 @@ export default function Academics() {
         </div>
       </section>
 
-      {/* ── REBEL NETWORK ────────────────────────────────────────────── */}
+      {/* ── LAS VEGAS SECTION ────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
-            <Eyebrow text="Career & Network" />
+            <Eyebrow text="The City" />
             <h2
               className="font-['Bebas_Neue'] text-white leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="The Rebel Network. Built for What's Next." />
+              <WordReveal text="Las Vegas. No City Like It." />
             </h2>
           </div>
           <motion.div
@@ -241,25 +240,38 @@ export default function Academics() {
             className="pt-2"
           >
             <p className="font-['Inter'] text-base md:text-lg text-white/60 leading-relaxed font-light">
-              Las Vegas is not just a city. It is an economy. With over $100 billion flowing through the region annually, UNLV graduates have access to career pipelines in hospitality, sports, entertainment, tech, healthcare, and real estate that simply do not exist anywhere else.
+              Las Vegas is the fastest-growing major metro in the United States, and UNLV sits at the center of it all. The city is home to a booming sports scene, with the Raiders, Golden Knights, Aces, and A's all competing at the highest level.
             </p>
             <p className="font-['Inter'] text-base md:text-lg text-white/40 leading-relaxed font-light mt-6">
-              The city is your classroom, and your network starts building the moment you step on campus. UNLV's Career Services connects student-athletes directly to employers across Las Vegas and beyond, with recruiting events, internship placements, and alumni mentorship programs designed to bridge your athletic career to your professional one.
+              As a Rebels volleyball player, you train and compete in that same energy every night. The Thomas and Mack Center holds 10,000 fans and sits right on campus. This is not a college town. This is a world-class city, and it is yours.
             </p>
+
+            {/* Callout quote */}
+            <motion.blockquote
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-10 border-l-4 border-[#CC0000] pl-6"
+            >
+              <p className="font-['Barlow_Condensed'] italic font-black text-white/80 text-xl md:text-2xl leading-snug">
+                "Las Vegas is the most electric sports city in America, and UNLV Volleyball plays in that energy every single night."
+              </p>
+            </motion.blockquote>
           </motion.div>
         </div>
       </section>
 
-      {/* ── STUDENT-ATHLETE SUPPORT ───────────────────────────────────── */}
+      {/* ── SAFETY & SUPPORT CHECKLIST ───────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
-            <Eyebrow text="Athletic Support" />
+            <Eyebrow text="Your Support System" />
             <h2
               className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="Support for Student-Athletes. You're a Student First." />
+              <WordReveal text="Safety and Support. We Have You Covered." />
             </h2>
           </div>
           <motion.div
@@ -305,11 +317,11 @@ export default function Academics() {
               className="font-['Bebas_Neue'] text-white leading-[0.88] mb-8"
               style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
             >
-              Ready to Become
-              <br />a Rebel?
+              Ready to Call
+              <br />Vegas Home?
             </h2>
             <p className="font-['Inter'] text-lg md:text-xl text-white/75 leading-relaxed font-light max-w-2xl mb-12">
-              A UNLV Women's Volleyball scholarship is more than a chance to compete. It is an invitation to one of the West's great universities, in one of the world's most electrifying cities. Come build something that has never been built before.
+              Life as a Rebel is unlike anything else in college volleyball. The campus, the city, the program. It all comes together here. Come see it for yourself.
             </p>
             <a
               href="https://unlvrebels.com/sports/womens-volleyball"
