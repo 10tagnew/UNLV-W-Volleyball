@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Academics", path: "/academics" },
   { label: "Campus Life", path: "/campus-life" },
+  { label: "The Arena", path: "/arena" },
   { label: "Schedule", path: "#" },
   { label: "Roster", path: "#" },
   { label: "Recruiting", path: "#" },

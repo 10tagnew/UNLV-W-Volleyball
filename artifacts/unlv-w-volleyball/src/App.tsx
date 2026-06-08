@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import StadiumEnergy from "@/pages/StadiumEnergy";
 import Academics from "@/pages/Academics";
 import CampusLife from "@/pages/CampusLife";
+import ThomasMack from "@/pages/ThomasMack";
 import FullPageNav from "@/components/FullPageNav";
 
 const queryClient = new QueryClient();
@@ -74,6 +75,7 @@ function Router() {
         <Route path="/" component={StadiumEnergy} />
         <Route path="/academics" component={Academics} />
         <Route path="/campus-life" component={CampusLife} />
+        <Route path="/arena" component={ThomasMack} />
         <Route component={NotFound} />
       </Switch>
     </>
