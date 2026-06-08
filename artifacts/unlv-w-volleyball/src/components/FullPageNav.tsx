@@ -71,18 +71,12 @@ export default function FullPageNav({ open, onClose }: FullPageNavProps) {
 
           {/* Top bar — logo + close */}
           <div className="flex items-center justify-between px-6 md:px-14 py-5">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-[#CC0000] flex items-center justify-center">
-                <span className="font-['Bebas_Neue'] text-white text-xl leading-none">R</span>
-              </div>
-              <div>
-                <p className="font-['Inter'] text-[10px] font-bold tracking-[0.3em] text-white/80 uppercase">
-                  Rebels Volleyball
-                </p>
-                <p className="font-['Inter'] text-[8px] tracking-[0.2em] text-white/30 uppercase">
-                  2026 Recruiting
-                </p>
-              </div>
+            <div className="flex items-center">
+              <img
+                src="/main_logo.svg"
+                alt="UNLV Rebels"
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
 
             <motion.button

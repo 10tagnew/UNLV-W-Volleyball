@@ -24,26 +24,12 @@ function AppNav({ onMenuOpen }: { onMenuOpen: () => void }) {
       }`}
     >
       {/* Logo */}
-      <div className="flex items-center gap-3">
-        <div className="w-9 h-9 bg-[#CC0000] flex items-center justify-center rounded-sm">
-          <span className="font-['Bebas_Neue'] text-white text-xl leading-none">R</span>
-        </div>
-        <div className="flex flex-col">
-          <span
-            className={`text-[10px] font-['Inter'] font-bold tracking-[0.2em] uppercase transition-colors duration-300 ${
-              isDark ? "text-white/90" : "text-[#0d0d0d]/90"
-            }`}
-          >
-            Rebels Volleyball
-          </span>
-          <span
-            className={`text-[8px] font-['Inter'] tracking-[0.15em] uppercase transition-colors duration-300 ${
-              isDark ? "text-white/40" : "text-black/40"
-            }`}
-          >
-            2026 Recruiting
-          </span>
-        </div>
+      <div className="flex items-center">
+        <img
+          src="/main_logo.svg"
+          alt="UNLV Rebels"
+          className={`h-10 w-auto transition-all duration-300 ${isDark ? "brightness-0 invert" : ""}`}
+        />
       </div>
 
       {/* Hamburger */}
