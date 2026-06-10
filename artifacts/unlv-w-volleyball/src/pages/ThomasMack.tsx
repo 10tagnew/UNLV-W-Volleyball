@@ -38,33 +38,33 @@ function WordReveal({ text, className }: { text: string; className?: string }) {
 }
 
 const STATS = [
-  { number: "18,776", label: "Seating Capacity" },
-  { number: "42,000", label: "Sq Ft Concourse" },
-  { number: "104 ft", label: "Floor to Ceiling" },
-  { number: "458-101", label: "All-Time Home Record" },
-  { number: "7.4M+", label: "Fans All-Time" },
+  { number: "3,100", label: "Seating Capacity" },
+  { number: "78,300", label: "Sq Ft Facility" },
+  { number: "$16.8M", label: "Built in 2001" },
+  { number: "1978", label: "Program Founded" },
+  { number: "MWC", label: "Conference" },
 ];
 
 const HISTORY = [
   {
-    year: "1983",
-    headline: "Grand Opening",
-    body: "The grand opening on December 16, 1983, was celebrated with performances by Frank Sinatra, Dean Martin, and Diana Ross.",
+    year: "1978",
+    headline: "Program Founded",
+    body: "UNLV launched its women's volleyball program as a Division I independent, finishing the inaugural season with a 10-7 record and establishing a foundation that would grow into one of the Mountain West's most competitive programs.",
   },
   {
-    year: "1984",
-    headline: "NBA History Made",
-    body: "Less than eight months after opening, the arena hosted NBA history when Kareem Abdul-Jabbar broke Wilt Chamberlain's all-time scoring record in a regular-season game between the Lakers and Jazz.",
-  },
-  {
-    year: "1999",
-    headline: "Nevada's Biggest Night",
-    body: "In November 1999, the venue set the record for the highest-grossing single event in Nevada history when Evander Holyfield faced Lennox Lewis, generating over $18 million.",
+    year: "2001",
+    headline: "Cox Pavilion Opens",
+    body: "Cox Pavilion opened as a dedicated home for UNLV women's athletics. The $16.8 million facility gave the volleyball and women's basketball programs a state-of-the-art venue built specifically for their game-day experience.",
   },
   {
     year: "2007",
-    headline: "NBA All-Star Game",
-    body: "The Thomas & Mack Center hosted the NBA All-Star Game, the first time the event was held in a city without an NBA franchise.",
+    headline: "First NCAA Tournament",
+    body: "Under head coach Kathy Gillen, UNLV posted a 24-6 record, won the Mountain West tournament, and made its first-ever NCAA Division I tournament appearance, announcing the program on a national stage.",
+  },
+  {
+    year: "Now",
+    headline: "Building Something New",
+    body: "Under head coach Dani Busboom Kelly, the Rebels are building toward a championship standard. Cox Pavilion is where that future is being forged, one match at a time.",
   },
 ];
 
@@ -92,18 +92,18 @@ export default function ThomasMack() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
-            <Eyebrow text="Las Vegas, Nevada · UNLV Athletics" />
+            <Eyebrow text="Las Vegas, Nevada · UNLV Women's Volleyball" />
 
             <h1
               className="font-['Bebas_Neue'] text-white leading-[0.88] mb-5"
               style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
             >
-              Thomas &amp; Mack<br />
-              <span className="text-[#CF0A2C]">Center</span>
+              Cox<br />
+              <span className="text-[#CF0A2C]">Pavilion</span>
             </h1>
 
             <p className="font-sans text-base md:text-lg text-white/60 leading-relaxed max-w-2xl font-light tracking-widest uppercase">
-              Home of the Runnin' Rebels. The Shark Tank. Las Vegas's Court.
+              Home of the Rebels. Right in the Heart of Las Vegas.
             </p>
           </motion.div>
 
@@ -135,10 +135,10 @@ export default function ThomasMack() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="font-sans text-base md:text-lg text-black/60 leading-relaxed max-w-3xl font-light">
-              There's no building quite like it in college basketball. Located on the campus of the University of Nevada, Las Vegas, the Thomas &amp; Mack Center has been home to the Runnin' Rebels since 1983 and in that time, it's become one of the most iconic arenas in the sport.
+              Cox Pavilion is home to UNLV Women's Volleyball. Opened in 2001 and connected to the adjacent Thomas &amp; Mack Center, the 78,300 square-foot facility was built specifically for the Rebels' women's programs and delivers an intimate, electric atmosphere that recruits and opponents both remember.
             </p>
             <p className="font-sans text-base md:text-lg text-black/50 leading-relaxed max-w-3xl font-light mt-5">
-              Named in honor of prominent Nevada bankers E. Parry Thomas and Jerome D. Mack, who donated the original funds for feasibility and land studies, the building carries the spirit of the city it calls home: bold, electric, and built for big moments.
+              The result of a partnership between Cox Communications and UNLV, the $16.8 million facility gave the volleyball program a true home court for the first time and helped raise the standard for women's athletics on campus.
             </p>
           </motion.div>
         </div>
@@ -169,12 +169,12 @@ export default function ThomasMack() {
       <section className="py-24 md:py-36 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
-            <Eyebrow text="The Shark Tank" />
+            <Eyebrow text="The Home Court" />
             <h2
               className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="Where Opponents Come to Lose." />
+              <WordReveal text="Where the Rebels Play." />
             </h2>
           </div>
           <motion.div
@@ -185,10 +185,10 @@ export default function ThomasMack() {
             className="pt-2"
           >
             <p className="font-sans text-base md:text-lg text-black/60 leading-relaxed font-light">
-              The arena earned the nickname "the Shark Tank" after legendary UNLV coach Jerry Tarkanian, known as Tark the Shark, who won a national championship in 1990 and led the program to four Final Fours. That nickname stuck because it fits. When the Rebels are rolling and the building is full, there's nowhere opponents want to be less.
+              With seating for up to 3,100 fans, Cox Pavilion creates the kind of tight, loud, focused atmosphere that gives the Rebels a genuine home court advantage. Every serve, every kill, every block echoes inside these walls in a way that larger arenas simply cannot match.
             </p>
             <p className="font-sans text-base md:text-lg text-black/50 leading-relaxed font-light mt-6">
-              In 559 games played at the Thomas &amp; Mack Center, UNLV has drawn over 7.4 million fans and compiled a remarkable home record of 458 wins and 101 losses (.819), including a 59-game home winning streak.
+              The ground floor houses dedicated locker rooms, player lounges, and practice courts for both volleyball and basketball, giving student-athletes a world-class training environment steps away from the competition floor. Everything you need to compete at the highest level is under one roof.
             </p>
           </motion.div>
         </div>
@@ -216,12 +216,12 @@ export default function ThomasMack() {
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#f7f7f7]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
-            <Eyebrow text="The Facility" />
+            <Eyebrow text="The Complex" />
             <h2
               className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="A World-Class Venue." />
+              <WordReveal text="Next Door to Greatness." />
             </h2>
           </div>
           <motion.div
@@ -232,10 +232,10 @@ export default function ThomasMack() {
             className="pt-2"
           >
             <p className="font-sans text-base md:text-lg text-black/60 leading-relaxed font-light">
-              The Thomas &amp; Mack Center seats up to 18,776 fans for basketball, features a 42,000 square-foot concourse, and rises 104 feet from floor to ceiling. With 4,500 on-site parking spaces and an additional 6,500 on-campus spots, the game-day experience is built for fans.
+              Cox Pavilion sits directly connected to the Thomas &amp; Mack Center, one of the most storied arenas in college sports history. As a Rebel, you train and compete within one of the most active and versatile sports complexes in the country, surrounded daily by a culture built on big moments.
             </p>
             <p className="font-sans text-base md:text-lg text-black/50 leading-relaxed font-light mt-6">
-              The facility hosts championship boxing matches, the National Finals Rodeo, NBA exhibition games, Mountain West Basketball Tournaments, PBR World Finals, and the NBA Vegas Summer League, making it one of the most active and versatile arenas in the country.
+              The broader Thomas &amp; Mack complex hosts the National Finals Rodeo, NBA Summer League, Mountain West tournaments, and championship boxing. The energy and expectation that fill this campus every season are unlike anything else in college athletics.
             </p>
           </motion.div>
         </div>
@@ -245,15 +245,15 @@ export default function ThomasMack() {
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
-            <Eyebrow text="Historic Moments" />
+            <Eyebrow text="Program History" />
             <h2
               className="font-['Bebas_Neue'] text-white leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="Not Just a College Arena. A Landmark." />
+              <WordReveal text="Built From the Ground Up." />
             </h2>
             <p className="font-sans text-base md:text-lg text-white/50 leading-relaxed font-light mt-6 max-w-2xl">
-              The Thomas &amp; Mack Center isn't just a college arena. It's a landmark in sports history.
+              The UNLV Women's Volleyball program has been building its story since 1978. Cox Pavilion is where the next chapter gets written.
             </p>
           </div>
 
@@ -314,13 +314,13 @@ export default function ThomasMack() {
               className="font-['Bebas_Neue'] text-white leading-[0.9] mb-6"
               style={{ fontSize: "clamp(2.5rem, 4vw, 4.5rem)" }}
             >
-              Come Experience It
+              Come See It for Yourself
             </h2>
             <p className="font-sans text-base text-white/80 leading-relaxed font-light mb-4">
-              The Thomas &amp; Mack Center is more than a venue. It's a proving ground. Every game played here carries the weight of 40-plus years of tradition, championship basketball, and some of the biggest moments in Las Vegas sports history.
+              Cox Pavilion is where UNLV Women's Volleyball comes to life. The crowd is close, the energy is real, and the atmosphere on a big match night is something every recruit needs to feel in person.
             </p>
             <p className="font-sans text-base text-white/65 leading-relaxed font-light">
-              For recruits, visiting the Shark Tank is a moment you don't forget. Come see where the Runnin' Rebels play and where your future might begin.
+              Come visit campus, walk the facility, and see why Las Vegas and UNLV are the right place to build your career as a student-athlete. Your future starts here.
             </p>
           </motion.div>
         </div>
