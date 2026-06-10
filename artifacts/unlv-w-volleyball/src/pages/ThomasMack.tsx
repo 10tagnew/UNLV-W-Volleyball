@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { ArrowDown } from "lucide-react";
+import YouTubeBackground from "@/components/YouTubeBackground";
 
-function Eyebrow({ text }: { text: string }) {
+const YOUTUBE_ID = "_06FQHXf0a0";
+
+function Eyebrow({ text, light = false }: { text: string; light?: boolean }) {
   return (
     <div className="flex items-center gap-3 mb-6">
       <div className="w-10 h-[2px] bg-[#CF0A2C]" />
-      <p className="font-sans text-[10px] font-semibold tracking-[0.5em] text-[#CF0A2C] uppercase">
+      <p className={`font-sans text-[10px] font-semibold tracking-[0.5em] uppercase ${light ? "text-[#CF0A2C]" : "text-[#CF0A2C]"}`}>
         {text}
       </p>
     </div>
@@ -37,7 +41,7 @@ const STATS = [
   { number: "18,776", label: "Seating Capacity" },
   { number: "42,000", label: "Sq Ft Concourse" },
   { number: "104 ft", label: "Floor to Ceiling" },
-  { number: "458–101", label: "All-Time Home Record" },
+  { number: "458-101", label: "All-Time Home Record" },
   { number: "7.4M+", label: "Fans All-Time" },
 ];
 
@@ -73,57 +77,74 @@ export default function ThomasMack() {
   return (
     <div className="min-h-screen w-full bg-white text-[#0d0d0d] overflow-x-hidden font-sans">
 
-      {/* HERO */}
-      <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-8 md:px-16 bg-white">
-        <div className="max-w-5xl">
+      {/* ── VIDEO HERO ─────────────────────────────────────────────────── */}
+      <section className="relative w-full overflow-hidden bg-black" style={{ height: "100svh", minHeight: "560px" }}>
+        {/* YouTube background */}
+        <YouTubeBackground videoId={YOUTUBE_ID} opacity={0.55} />
+
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 pointer-events-none" />
+
+        {/* Hero copy */}
+        <div className="relative z-10 h-full flex flex-col justify-end px-8 md:px-16 pb-20 md:pb-28">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           >
             <Eyebrow text="Las Vegas, Nevada · UNLV Athletics" />
 
             <h1
-              className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.88] mb-6"
+              className="font-['Bebas_Neue'] text-white leading-[0.88] mb-5"
               style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
             >
               Thomas &amp; Mack<br />
               <span className="text-[#CF0A2C]">Center</span>
             </h1>
 
-            <p className="font-sans text-base md:text-lg text-[#808080] leading-relaxed max-w-2xl font-light tracking-wide uppercase mb-3">
+            <p className="font-sans text-base md:text-lg text-white/60 leading-relaxed max-w-2xl font-light tracking-widest uppercase">
               Home of the Runnin' Rebels. The Shark Tank. Las Vegas's Court.
             </p>
+          </motion.div>
 
-            <p className="font-sans text-base md:text-lg text-black/60 leading-relaxed max-w-3xl font-light mt-6">
+          {/* Scroll indicator */}
+          <motion.div
+            className="absolute bottom-8 right-8 md:right-16 flex flex-col items-center gap-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ArrowDown className="w-4 h-4 text-white/40" />
+            </motion.div>
+            <span className="font-sans text-[8px] tracking-[0.4em] text-white/30 uppercase rotate-90 origin-center mt-4">Scroll</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── INTRO TEXT ─────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-36 px-8 md:px-16 bg-white">
+        <div className="max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <p className="font-sans text-base md:text-lg text-black/60 leading-relaxed max-w-3xl font-light">
               There's no building quite like it in college basketball. Located on the campus of the University of Nevada, Las Vegas, the Thomas &amp; Mack Center has been home to the Runnin' Rebels since 1983 and in that time, it's become one of the most iconic arenas in the sport.
             </p>
-
-            <p className="font-sans text-base md:text-lg text-black/55 leading-relaxed max-w-3xl font-light mt-5">
+            <p className="font-sans text-base md:text-lg text-black/50 leading-relaxed max-w-3xl font-light mt-5">
               Named in honor of prominent Nevada bankers E. Parry Thomas and Jerome D. Mack, who donated the original funds for feasibility and land studies, the building carries the spirit of the city it calls home: bold, electric, and built for big moments.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* IMAGE PLACEHOLDER 1: Full-width arena interior */}
-      <section className="w-full px-0">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="w-full flex items-center justify-center bg-[#CCCCCC]"
-          style={{ height: "clamp(260px, 41.6vw, 500px)" }}
-          aria-label="Image placeholder"
-        >
-          <p className="font-sans text-sm text-[#808080] tracking-widest uppercase text-center px-4">
-            IMAGE: Thomas &amp; Mack Center arena interior, full bowl view.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* STATS BAR */}
+      {/* ── STATS BAR ──────────────────────────────────────────────────── */}
       <section className="bg-[#CF0A2C]">
         <div className="grid grid-cols-2 md:grid-cols-5 divide-x divide-white/20">
           {STATS.map((stat, i) => (
@@ -144,7 +165,7 @@ export default function ThomasMack() {
         </div>
       </section>
 
-      {/* THE SHARK TANK */}
+      {/* ── THE SHARK TANK ─────────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
@@ -173,7 +194,25 @@ export default function ThomasMack() {
         </div>
       </section>
 
-      {/* WORLD-CLASS VENUE */}
+      {/* ── INTERIOR PHOTO — full width ────────────────────────────────── */}
+      <section className="w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="w-full overflow-hidden bg-[#0d0d0d]"
+          style={{ height: "clamp(260px, 41.6vw, 500px)" }}
+        >
+          <img
+            src="https://unlvrebels.com/images/2007/10/8/TMC-Interior-07-250.jpg"
+            alt="Thomas & Mack Center arena interior, full bowl view"
+            className="w-full h-full object-cover object-center"
+          />
+        </motion.div>
+      </section>
+
+      {/* ── WORLD-CLASS VENUE ──────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#f7f7f7]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
@@ -202,7 +241,7 @@ export default function ThomasMack() {
         </div>
       </section>
 
-      {/* HISTORIC MOMENTS */}
+      {/* ── HISTORIC MOMENTS ───────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
@@ -243,25 +282,26 @@ export default function ThomasMack() {
         </div>
       </section>
 
-      {/* IMAGE PLACEHOLDER 2 + COME EXPERIENCE IT — 50/50 split */}
+      {/* ── EXTERIOR PHOTO + COME EXPERIENCE IT — 50/50 ────────────────── */}
       <section className="w-full">
         <div className="grid md:grid-cols-2">
-          {/* Left: image placeholder */}
+          {/* Left: exterior photo */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex items-center justify-center bg-[#CCCCCC]"
+            className="overflow-hidden bg-[#0d0d0d]"
             style={{ minHeight: "400px" }}
-            aria-label="Image placeholder"
           >
-            <p className="font-sans text-sm text-[#808080] tracking-widest uppercase text-center px-8">
-              IMAGE: Runnin' Rebels in-game action photo.
-            </p>
+            <img
+              src="https://unlvrebels.com/images/2007/10/8/TMC-Exterior-07-Other-250.jpg"
+              alt="Thomas & Mack Center exterior"
+              className="w-full h-full object-cover object-center"
+            />
           </motion.div>
 
-          {/* Right: Come Experience It copy */}
+          {/* Right: Come Experience It */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -286,12 +326,10 @@ export default function ThomasMack() {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ── FOOTER ─────────────────────────────────────────────────────── */}
       <footer className="py-10 px-8 md:px-16 border-t border-black/10 bg-[#080808]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-4">
-            <img src="/main_logo.svg" alt="UNLV Rebels" className="h-8 w-auto brightness-0 invert" />
-          </div>
+          <img src="/main_logo.svg" alt="UNLV Rebels" className="h-8 w-auto brightness-0 invert" />
           <p className="font-sans text-[9px] tracking-[0.15em] text-white/25 uppercase">
             &copy; {new Date().getFullYear()} UNLV Athletics. All rights reserved.
           </p>
