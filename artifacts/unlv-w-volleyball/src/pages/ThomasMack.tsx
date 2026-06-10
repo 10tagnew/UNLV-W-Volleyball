@@ -106,20 +106,21 @@ export default function ThomasMack() {
         </div>
       </section>
 
-      {/* IMAGE PLACEHOLDER 1: Full-width arena interior */}
+      {/* IMAGE: Full-width arena interior */}
       <section className="w-full px-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="w-full flex items-center justify-center bg-[#CCCCCC]"
+          className="w-full overflow-hidden bg-[#0d0d0d]"
           style={{ height: "clamp(260px, 41.6vw, 500px)" }}
-          aria-label="Image placeholder"
         >
-          <p className="font-sans text-sm text-[#808080] tracking-widest uppercase text-center px-4">
-            IMAGE: Thomas &amp; Mack Center arena interior, full bowl view.
-          </p>
+          <img
+            src="https://unlvrebels.com/images/2007/10/8/TMC-Interior-07-250.jpg"
+            alt="Thomas &amp; Mack Center arena interior, full bowl view"
+            className="w-full h-full object-cover object-center"
+          />
         </motion.div>
       </section>
 
