@@ -247,19 +247,20 @@ export default function ThomasMack() {
       {/* IMAGE PLACEHOLDER 2 + COME EXPERIENCE IT — 50/50 split */}
       <section className="w-full">
         <div className="grid md:grid-cols-2">
-          {/* Left: image placeholder */}
+          {/* Left: exterior photo */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="flex items-center justify-center bg-[#CCCCCC]"
+            className="overflow-hidden bg-[#0d0d0d]"
             style={{ minHeight: "400px" }}
-            aria-label="Image placeholder"
           >
-            <p className="font-sans text-sm text-[#808080] tracking-widest uppercase text-center px-8">
-              IMAGE: Runnin' Rebels in-game action photo.
-            </p>
+            <img
+              src="https://unlvrebels.com/images/2007/10/8/TMC-Exterior-07-Other-250.jpg"
+              alt="Thomas & Mack Center exterior"
+              className="w-full h-full object-cover object-center"
+            />
           </motion.div>
 
           {/* Right: Come Experience It copy */}
