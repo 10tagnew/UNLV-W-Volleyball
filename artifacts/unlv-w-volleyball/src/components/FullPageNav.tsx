@@ -12,10 +12,6 @@ const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Academics", path: "/academics" },
   { label: "Campus Life", path: "/campus-life" },
-  { label: "Schedule", path: "#" },
-  { label: "Roster", path: "#" },
-  { label: "Recruiting", path: "#" },
-  { label: "Contact", path: "#" },
 ];
 
 const CONTACT_LINES = [
