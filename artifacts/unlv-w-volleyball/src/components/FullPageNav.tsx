@@ -11,11 +11,11 @@ interface FullPageNavProps {
 const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Academics", path: "/academics" },
-  { label: "Campus Life", path: "/campus-life" },
+  { label: "Where Rebels Thrive", path: "/campus-life" },
 ];
 
 const CONTACT_LINES = [
-  { label: "Head Coach", value: "Dani Busboom Kelly" },
+  { label: "Head Coach", value: "Malia Shoji" },
   { label: "Program", value: "UNLV Women's Volleyball" },
   { label: "Location", value: "Las Vegas, Nevada" },
   { label: "Conference", value: "Mountain West" },
