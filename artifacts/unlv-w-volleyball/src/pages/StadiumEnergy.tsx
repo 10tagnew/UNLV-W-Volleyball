@@ -305,7 +305,7 @@ export default function StadiumEnergy() {
       <section className="relative overflow-hidden bg-[#080000]">
         <div className="relative">
           <img
-            src="/cox-pavilion.jpg"
+            src="/Screen Shot 2026-06-12 at 4.25.25 PM.png"
             alt="Cox Pavilion — UNLV Volleyball home court"
             className="w-full object-cover object-center"
             style={{ maxHeight: "72vh" }}
