@@ -96,8 +96,22 @@ export default function CampusLife() {
     <div className="min-h-screen w-full bg-white text-[#0d0d0d] overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-8 md:px-16 bg-white">
-        <div className="max-w-5xl">
+      <section className="relative min-h-[90vh] flex items-end pb-20 md:pb-28 overflow-hidden">
+        {/* YouTube background video */}
+        <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/9KWFsbgX8dw?autoplay=1&mute=1&loop=1&playlist=9KWFsbgX8dw&controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title="UNLV campus overview"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            style={{ width: "100vw", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 px-8 md:px-16 pt-28 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,15 +120,15 @@ export default function CampusLife() {
             <Eyebrow text="Las Vegas, Nevada · Life as a Rebel" />
 
             <h1
-              className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.88] mb-8"
+              className="font-['Bebas_Neue'] text-white leading-[0.88] mb-8"
               style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)" }}
             >
-              The City Is
+              Where Rebels
               <br />
-              <span className="text-[#CC0000]">Your Campus</span>
+              <span className="text-[#CC0000]">Thrive</span>
             </h1>
 
-            <p className="font-['Inter'] text-lg md:text-xl text-black/60 leading-relaxed max-w-2xl mb-10 font-light">
+            <p className="font-['Inter'] text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mb-10 font-light">
               At UNLV, your college experience is rooted in one of the most livable regions in the American West. The greater Las Vegas Valley stretches from master-planned Summerlin to family-friendly Henderson, with mountain escapes at Mount Charleston and resort living at Lake Las Vegas just a short drive from campus.
             </p>
 

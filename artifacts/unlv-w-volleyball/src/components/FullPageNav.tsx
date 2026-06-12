@@ -11,7 +11,7 @@ interface FullPageNavProps {
 const NAV_LINKS = [
   { label: "Home", path: "/" },
   { label: "Academics", path: "/academics" },
-  { label: "Campus Life", path: "/campus-life" },
+  { label: "Where Rebels Thrive", path: "/campus-life" },
 ];
 
 const CONTACT_LINES = [
