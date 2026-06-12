@@ -68,7 +68,18 @@ function WordReveal({ text, className }: { text: string; className?: string }) {
   );
 }
 
-/* ── Main page ─────────────────────────────────────────────────────── */
+const ROSTER = [
+  { number: "1",  name: "Jada Ingram",         pos: "OH", position: "Outside Hitter", height: "",      year: "Junior",   hometown: "Topeka, KS" },
+  { number: "6",  name: "Kennedy Peery",        pos: "S",  position: "Setter",         height: "",      year: "Senior",   hometown: "" },
+  { number: "8",  name: "Caleigh King",         pos: "L",  position: "Libero",         height: "5'6\"", year: "Junior",   hometown: "Southlake, TX" },
+  { number: "9",  name: "Rheanna Deen-Jackson", pos: "MB", position: "Middle Blocker", height: "6'1\"", year: "Junior",   hometown: "Houston, TX" },
+  { number: "10", name: "Alondra Alarcon",      pos: "OH", position: "Outside Hitter", height: "5'11\"",year: "Senior",   hometown: "Lima, Peru" },
+  { number: "19", name: "Agata Makowska",       pos: "S",  position: "Setter",         height: "5'10\"",year: "Junior",   hometown: "Poznan, Poland" },
+  { number: "20", name: "Isha Knight",          pos: "L",  position: "Libero",         height: "5'7\"", year: "Graduate", hometown: "Mililani, HI" },
+  { number: "21", name: "Basia Latos",          pos: "OH", position: "Outside Hitter", height: "5'11\"",year: "Junior",   hometown: "Łazy, Poland" },
+];
+
+
 export default function StadiumEnergy() {
   // Page-level scroll for hero parallax
   const { scrollY } = useScroll();
@@ -277,6 +288,81 @@ export default function StadiumEnergy() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* ── STARTING ROSTER ──────────────────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        {/* Video background */}
+        <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/mXbKLPD-rx0?autoplay=1&mute=1&loop=1&playlist=mXbKLPD-rx0&controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0"
+            allow="autoplay; encrypted-media"
+            title="UNLV roster backdrop"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            style={{ width: "100vw", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh" }}
+          />
+          <div className="absolute inset-0 bg-[#080000]/88" />
+        </div>
+
+        <div className="relative z-10 py-24 md:py-36 px-8 md:px-16">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-10 h-[2px] bg-[#CC0000]" />
+            <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+              2025 Season
+            </p>
+          </div>
+
+          <h2
+            className="font-['Bebas_Neue'] text-white leading-[0.88] mb-14"
+            style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
+          >
+            <WordReveal text="Starting Roster." />
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+            {ROSTER.map((player, i) => (
+              <motion.div
+                key={player.name}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.55, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                className="group border border-white/10 bg-white/[0.04] backdrop-blur-sm p-5 hover:border-[#CC0000]/50 transition-colors duration-300"
+              >
+                <div
+                  className="font-['Bebas_Neue'] text-white/8 group-hover:text-[#CC0000]/15 transition-colors leading-none mb-3 select-none"
+                  style={{ fontSize: "clamp(3.5rem, 6vw, 5.5rem)" }}
+                >
+                  {player.number}
+                </div>
+                <div className="font-['Bebas_Neue'] text-white text-xl md:text-2xl leading-[1.05] mb-3 group-hover:text-[#CC0000] transition-colors">
+                  {player.name}
+                </div>
+                <div className="inline-flex items-center gap-1.5 mb-4">
+                  <span className="font-['Inter'] text-[8px] font-bold tracking-[0.35em] text-[#CC0000] uppercase border border-[#CC0000]/30 px-2 py-0.5">
+                    {player.pos}
+                  </span>
+                  <span className="font-['Inter'] text-[8px] tracking-[0.2em] text-white/30 uppercase">
+                    {player.position}
+                  </span>
+                </div>
+                <div className="space-y-1 border-t border-white/8 pt-3">
+                  {player.height && (
+                    <p className="font-['Inter'] text-[10px] text-white/50">
+                      {player.height} · {player.year}
+                    </p>
+                  )}
+                  {!player.height && (
+                    <p className="font-['Inter'] text-[10px] text-white/50">{player.year}</p>
+                  )}
+                  {player.hometown && (
+                    <p className="font-['Inter'] text-[10px] text-white/30">{player.hometown}</p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
