@@ -7,14 +7,14 @@ import NotFound from "@/pages/not-found";
 import StadiumEnergy from "@/pages/StadiumEnergy";
 import Academics from "@/pages/Academics";
 import CampusLife from "@/pages/CampusLife";
-import ThomasMack from "@/pages/ThomasMack";
+import Arena from "@/pages/Arena";
 import FullPageNav from "@/components/FullPageNav";
 
 const queryClient = new QueryClient();
 
 function AppNav({ onMenuOpen }: { onMenuOpen: () => void }) {
   const [location] = useLocation();
-  const isDark = location === "/";
+  const isDark = location === "/" || location === "/arena";
 
   return (
     <nav
@@ -75,7 +75,7 @@ function Router() {
         <Route path="/" component={StadiumEnergy} />
         <Route path="/academics" component={Academics} />
         <Route path="/campus-life" component={CampusLife} />
-        <Route path="/arena" component={ThomasMack} />
+        <Route path="/arena" component={Arena} />
         <Route component={NotFound} />
       </Switch>
     </>
