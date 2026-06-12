@@ -168,7 +168,7 @@ export default function StadiumEnergy() {
             transition={{ duration: 0.8, delay: 0.75 }}
             className="font-['Inter'] text-sm md:text-base text-white/50 font-light tracking-widest mt-8 max-w-sm"
           >
-            UNLV Women's Volleyball — where champions are built every day.
+            UNLV Women's Volleyball, where champions are built every day.
           </motion.p>
 
           {/* Scroll cue */}
@@ -230,7 +230,7 @@ export default function StadiumEnergy() {
               transition={{ duration: 0.8 }}
               className="font-['Inter'] text-lg md:text-xl text-white/60 leading-relaxed font-light"
             >
-              We are building something undeniable in Las Vegas — a culture of excellence, a relentless pursuit of greatness, and a sisterhood of athletes who demand more.
+              We are building something undeniable in Las Vegas: a culture of excellence, a relentless pursuit of greatness, and a sisterhood of athletes who demand more.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -239,7 +239,7 @@ export default function StadiumEnergy() {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="font-['Inter'] text-base md:text-lg text-white/40 leading-relaxed font-light"
             >
-              The lights are bright. The stage is set. Las Vegas is the most electric sports city in America — and UNLV Volleyball plays in that energy every single night.
+              The lights are bright. The stage is set. Las Vegas is the most electric sports city in America, and UNLV Volleyball plays in that energy every single night.
             </motion.p>
           </div>
         </div>
@@ -390,7 +390,7 @@ function ParallaxQuote() {
           "We are now working towards accomplishments that have never been done before."
         </p>
         <p className="font-['Inter'] text-[10px] tracking-[0.4em] text-[#CC0000] uppercase mt-5">
-          — Malia Shoji, Head Coach · UNLV Women's Volleyball
+          Malia Shoji, Head Coach · UNLV Women's Volleyball
         </p>
       </motion.div>
     </section>

@@ -39,7 +39,7 @@ function Eyebrow({ text }: { text: string }) {
 const STATS = [
   { number: "350+", label: "Acre Campus" },
   { number: "300+", label: "Days of Sunshine" },
-  { number: "10 Min", label: "From the Strip" },
+  { number: "30 Min", label: "To Mount Charleston" },
   { number: "500+", label: "Student Organizations" },
   { number: "#1", label: "Most Diverse University in the West" },
 ];
@@ -73,7 +73,7 @@ const CARDS = [
   {
     emoji: "🏙️",
     name: "Las Vegas",
-    body: "It is in our name, it is where we call home, and it is a big part of who we are. Where else can you experience over 300 days of sunshine, unparalleled networking, and a city that runs on ambition?",
+    body: "Las Vegas is our home, but the greater valley is where student-athletes actually live. From master-planned Summerlin to award-winning Henderson, the communities surrounding campus are safe, welcoming, and full of the outdoor recreation, dining, and everyday life families are looking for.",
   },
 ];
 
@@ -82,7 +82,7 @@ const CHECKLIST = [
   "Campus safety and emergency resources available 24/7",
   "Dedicated wellness and mental health support for student-athletes",
   "RebelCard access to campus facilities, dining, and services",
-  "Campus located 10 minutes from the Las Vegas Strip with easy transit access",
+  "Surrounded by safe, family-friendly communities: Summerlin, Henderson, and Lake Las Vegas",
   "350+ acre campus with maps, parking, and resource centers",
 ];
 
@@ -115,7 +115,7 @@ export default function CampusLife() {
             </h1>
 
             <p className="font-['Inter'] text-lg md:text-xl text-black/60 leading-relaxed max-w-2xl mb-10 font-light">
-              At UNLV, your college experience does not end at the property line. You are 10 minutes from the Strip, 300 days of sunshine a year, and a city that never stops moving.
+              At UNLV, your college experience is rooted in one of the most livable regions in the American West. The greater Las Vegas Valley stretches from master-planned Summerlin to family-friendly Henderson, with mountain escapes at Mount Charleston and resort living at Lake Las Vegas just a short drive from campus.
             </p>
 
             <a
@@ -224,12 +224,12 @@ export default function CampusLife() {
       <section className="py-24 md:py-36 px-8 md:px-16 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <div>
-            <Eyebrow text="The City" />
+            <Eyebrow text="The Greater Valley" />
             <h2
               className="font-['Bebas_Neue'] text-white leading-[0.9]"
               style={{ fontSize: "clamp(2.5rem, 5.5vw, 5.5rem)" }}
             >
-              <WordReveal text="Las Vegas. No City Like It." />
+              <WordReveal text="The Valley. More Than You Think." />
             </h2>
           </div>
           <motion.div
@@ -240,10 +240,10 @@ export default function CampusLife() {
             className="pt-2"
           >
             <p className="font-['Inter'] text-base md:text-lg text-white/60 leading-relaxed font-light">
-              Las Vegas is the fastest-growing major metro in the United States, and UNLV sits at the center of it all. The city is home to a booming sports scene, with the Raiders, Golden Knights, Aces, and A's all competing at the highest level.
+              The Las Vegas Valley is one of the most misunderstood places in America. Beyond the entertainment district, you will find some of the most livable, family-friendly communities in the West. Summerlin offers master-planned neighborhoods and world-class hiking at Red Rock Canyon. Henderson is consistently ranked one of the safest cities its size in the country. Lake Las Vegas sits at a resort-style waterfront just 25 minutes from campus. And Mount Charleston rises to 11,000 feet, giving you skiing, hiking, and cool mountain air less than an hour away.
             </p>
             <p className="font-['Inter'] text-base md:text-lg text-white/40 leading-relaxed font-light mt-6">
-              As a Rebels volleyball player, you train and compete in that same energy every night. The Thomas and Mack Center holds 10,000 fans and sits right on campus. This is not a college town. This is a world-class city, and it is yours.
+              This is where Rebels actually live. The energy of the city is there when you want it. The peace of the suburbs is always there when you need it.
             </p>
 
             {/* Callout quote */}
@@ -255,7 +255,7 @@ export default function CampusLife() {
               className="mt-10 border-l-4 border-[#CC0000] pl-6"
             >
               <p className="font-['Barlow_Condensed'] italic font-black text-white/80 text-xl md:text-2xl leading-snug">
-                "Las Vegas is the most electric sports city in America, and UNLV Volleyball plays in that energy every single night."
+                "Las Vegas is the address. The valley is the home. And for student-athletes, there is no better place to compete, grow, and belong."
               </p>
             </motion.blockquote>
           </motion.div>
