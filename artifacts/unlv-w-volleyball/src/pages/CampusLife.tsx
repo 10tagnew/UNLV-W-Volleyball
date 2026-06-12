@@ -170,7 +170,7 @@ export default function CampusLife() {
       <section className="bg-[#0d0d0d]">
         <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
           <iframe
-            src="https://www.youtube.com/embed/mXbKLPD-rx0?rel=0&modestbranding=1"
+            src="https://www.youtube.com/embed/mXbKLPD-rx0?autoplay=1&mute=1&loop=1&playlist=mXbKLPD-rx0&controls=1&rel=0&modestbranding=1"
             allow="autoplay; encrypted-media; fullscreen"
             allowFullScreen
             title="Life at UNLV"

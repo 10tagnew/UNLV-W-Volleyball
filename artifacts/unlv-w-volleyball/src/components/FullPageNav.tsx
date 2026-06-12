@@ -10,8 +10,9 @@ interface FullPageNavProps {
 
 const NAV_LINKS = [
   { label: "Home", path: "/" },
-  { label: "Academics", path: "/academics" },
+  { label: "Learning That Opens Doors", path: "/academics" },
   { label: "Where Rebels Thrive", path: "/campus-life" },
+  { label: "Imagine Playing Here", path: "/arena" },
 ];
 
 const CONTACT_LINES = [

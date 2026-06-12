@@ -305,7 +305,7 @@ export default function StadiumEnergy() {
       <section className="relative overflow-hidden bg-[#080000]">
         <div className="relative">
           <img
-            src="/cox-pavilion.jpg"
+            src="/Screen Shot 2026-06-12 at 4.25.25 PM.png"
             alt="Cox Pavilion — UNLV Volleyball home court"
             className="w-full object-cover object-center"
             style={{ maxHeight: "72vh" }}
@@ -407,11 +407,11 @@ export default function StadiumEnergy() {
             className="font-['Bebas_Neue'] text-white leading-[0.88] mb-14"
             style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
           >
-            <WordReveal text="Starting Roster." />
+            <WordReveal text="The Starting Rebel Lineup." />
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
-            {ROSTER.map((player, i) => (
+            {ROSTER.filter(p => p.video).map((player, i) => (
               <motion.div
                 key={player.name}
                 initial={{ opacity: 0, y: 32 }}
@@ -421,19 +421,14 @@ export default function StadiumEnergy() {
                 className="group relative overflow-hidden"
                 style={{ aspectRatio: "2/3" }}
               >
-                {/* Video or dark bg */}
-                {player.video ? (
-                  <video
-                    src={player.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-[#0d0d0d]" />
-                )}
+                <video
+                  src={player.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
@@ -443,12 +438,6 @@ export default function StadiumEnergy() {
 
                 {/* Content pinned to bottom */}
                 <div className="absolute inset-x-0 bottom-0 p-4">
-                  <div
-                    className="font-['Bebas_Neue'] text-white/15 leading-none select-none group-hover:text-[#CC0000]/25 transition-colors"
-                    style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)" }}
-                  >
-                    {player.number}
-                  </div>
                   <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
                     style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
                   >
@@ -493,7 +482,7 @@ export default function StadiumEnergy() {
               className="relative"
             >
               <img
-                src="/coach-shoji.jpg"
+                src="/Screen Shot 2026-06-12 at 5.17.49 PM.png"
                 alt="Malia Shoji, Head Coach"
                 className="w-full object-cover object-top"
                 style={{ maxHeight: "600px" }}

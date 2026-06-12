@@ -98,8 +98,21 @@ export default function Academics() {
     <div className="min-h-screen w-full bg-white text-[#0d0d0d] overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-8 md:px-16 bg-white">
-        <div className="max-w-5xl">
+      <section className="relative min-h-[90vh] flex items-end overflow-hidden">
+        {/* YouTube background */}
+        <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/sBIRdu9WTB0?autoplay=1&mute=1&loop=1&playlist=sBIRdu9WTB0&controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0"
+            allow="autoplay; encrypted-media"
+            title="UNLV academics"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            style={{ width: "100vw", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+        </div>
+
+        <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-28 pt-28 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -108,7 +121,7 @@ export default function Academics() {
             <Eyebrow text="Las Vegas, Nevada · UNLV Academics" />
 
             <h1
-              className="font-['Bebas_Neue'] text-[#0d0d0d] leading-[0.88] mb-8"
+              className="font-['Bebas_Neue'] text-white leading-[0.88] mb-8"
               style={{ fontSize: "clamp(3.5rem, 10vw, 10rem)" }}
             >
               A Degree as Bold
@@ -116,7 +129,7 @@ export default function Academics() {
               <span className="text-[#CC0000]">as Your Game</span>
             </h1>
 
-            <p className="font-['Inter'] text-lg md:text-xl text-black/60 leading-relaxed max-w-2xl mb-10 font-light">
+            <p className="font-['Inter'] text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mb-10 font-light">
               At UNLV, you don't just compete in one of college volleyball's most electric programs. You earn a degree from one of the fastest-rising research universities in the country.
             </p>
 
@@ -151,6 +164,43 @@ export default function Academics() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* ── VIDEO GALLERY ────────────────────────────────────────────── */}
+      <section className="bg-[#0d0d0d] py-16 md:py-24 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-10 h-[2px] bg-[#CC0000]" />
+            <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+              Inside UNLV
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {[
+              { id: "j3AWnJXov4o", title: "Campus Experience" },
+              { id: "Pt7p_QMbMhM", title: "Student Life" },
+              { id: "0PAn9MeU4Hc", title: "Academic Programs" },
+            ].map((video, i) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="relative bg-black overflow-hidden"
+                style={{ paddingBottom: "56.25%" }}
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&loop=1&playlist=${video.id}&controls=1&rel=0&modestbranding=1`}
+                  allow="autoplay; encrypted-media; fullscreen"
+                  allowFullScreen
+                  title={video.title}
+                  className="absolute inset-0 w-full h-full"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
