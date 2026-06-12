@@ -301,6 +301,86 @@ export default function StadiumEnergy() {
         </div>
       </section>
 
+      {/* ── COX PAVILION ─────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#080000]">
+        <div className="relative">
+          <img
+            src="/cox-pavilion.jpg"
+            alt="Cox Pavilion — UNLV Volleyball home court"
+            className="w-full object-cover object-center"
+            style={{ maxHeight: "72vh" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080000] via-[#080000]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080000]/50 via-transparent to-[#080000]/50" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="absolute bottom-0 left-0 px-8 md:px-16 pb-10 md:pb-16"
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-[#CC0000]" />
+              <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+                Cox Pavilion · Las Vegas
+              </p>
+            </div>
+            <h2
+              className="font-['Bebas_Neue'] text-white leading-[0.88]"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+            >
+              Home Court<br />Advantage.
+            </h2>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── OUR VALUES ───────────────────────────────────────────────── */}
+      <section className="py-24 md:py-36 px-8 md:px-16 bg-[#080000] border-y border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-4 mb-14">
+            <div className="w-10 h-[2px] bg-[#CC0000]" />
+            <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+              Culture & Identity
+            </p>
+          </div>
+          <h2
+            className="font-['Bebas_Neue'] text-white leading-[0.88] mb-16"
+            style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
+          >
+            <WordReveal text="Our Values." />
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-px bg-white/5">
+            {[
+              { title: "Stay Together",    body: "Together we will always accomplish more." },
+              { title: "Grow Together",    body: "Maximize every opportunity to grow." },
+              { title: "Compete Together", body: "Relentless in giving to the team." },
+            ].map((value, i) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.12 }}
+                className="bg-[#080000] p-10 md:p-14 group"
+              >
+                <div className="w-10 h-[3px] bg-[#CC0000] mb-8 group-hover:w-16 transition-all duration-300" />
+                <h3
+                  className="font-['Bebas_Neue'] text-white leading-none mb-6 group-hover:text-[#CC0000] transition-colors"
+                  style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+                >
+                  {value.title}
+                </h3>
+                <p className="font-['Inter'] text-base text-white/50 leading-relaxed font-light">
+                  {value.body}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── STARTING ROSTER ──────────────────────────────────────────── */}
       <section className="relative overflow-hidden">
         {/* Video background */}
@@ -397,6 +477,129 @@ export default function StadiumEnergy() {
 
       {/* ── PARALLAX QUOTE SECTION ───────────────────────────────────── */}
       <ParallaxQuote />
+
+      {/* ── COACH MALIA SHOJI ────────────────────────────────────────── */}
+      <section className="bg-[#0a0000] py-24 md:py-36 px-8 md:px-16">
+        <div className="max-w-6xl mx-auto">
+
+          {/* Bio row */}
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center mb-24 md:mb-36">
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <img
+                src="/coach-shoji.jpg"
+                alt="Malia Shoji, Head Coach"
+                className="w-full object-cover object-top"
+                style={{ maxHeight: "600px" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0000]/60 via-transparent to-transparent" />
+            </motion.div>
+
+            {/* Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-10 h-[2px] bg-[#CC0000]" />
+                <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+                  Head Coach
+                </p>
+              </div>
+              <h2
+                className="font-['Bebas_Neue'] text-white leading-[0.88] mb-10"
+                style={{ fontSize: "clamp(3rem, 7vw, 7rem)" }}
+              >
+                Malia Shoji
+              </h2>
+              <p className="font-['Inter'] text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-6">
+                In Her First 2 Years
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Set a single-season team hitting percentage record",
+                  "Single game home attendance record vs. Hawaii — 3,117 fans",
+                  "6 out of 7 postseason appearances",
+                  "3rd UNLV coach with 18+ wins in her first season",
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+                    className="flex items-start gap-4"
+                  >
+                    <div className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#CC0000]" />
+                    <span className="font-['Inter'] text-base text-white/60 leading-relaxed font-light">
+                      {item}
+                    </span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Pros pipeline row */}
+          <div className="border-t border-white/8 pt-16 md:pt-24 grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-[2px] bg-[#CC0000]" />
+                <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+                  The Pipeline
+                </p>
+              </div>
+              <h3
+                className="font-['Bebas_Neue'] text-white leading-[0.88]"
+                style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+              >
+                Coach Shoji<br />
+                <span style={{ WebkitTextStroke: "2px #CC0000", color: "transparent" }}>Coaches Pros.</span>
+              </h3>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="pt-2"
+            >
+              <div className="font-['Bebas_Neue'] text-[#CC0000] mb-1" style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}>
+                15+
+              </div>
+              <p className="font-['Inter'] text-[10px] font-bold tracking-[0.4em] text-white/50 uppercase mb-10">
+                Players in the Pros
+              </p>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                {[
+                  "Jordyn Freeman", "Isabel Martin", "Elsa Descamps",
+                  "Kate Brennan", "Bree Hammel", "Milica Tasic",
+                  "Mariena Hayden", "Chloe Thomas", "Arien Fafard",
+                  "Gabrielle Arretche-Ramos",
+                ].map((name) => (
+                  <p key={name} className="font-['Barlow_Condensed'] text-sm font-black uppercase text-white/50 tracking-wide">
+                    {name}
+                  </p>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* ── CAMPUS LIFE VIDEO CALLOUT ────────────────────────────────── */}
       <section className="relative h-[100dvh] overflow-hidden flex items-end">
