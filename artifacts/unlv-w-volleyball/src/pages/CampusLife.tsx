@@ -166,6 +166,19 @@ export default function CampusLife() {
         </div>
       </section>
 
+      {/* ── FEATURED VIDEO ───────────────────────────────────────────── */}
+      <section className="bg-[#0d0d0d]">
+        <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+          <iframe
+            src="https://www.youtube.com/embed/mXbKLPD-rx0?rel=0&modestbranding=1"
+            allow="autoplay; encrypted-media; fullscreen"
+            allowFullScreen
+            title="Life at UNLV"
+            className="absolute inset-0 w-full h-full"
+          />
+        </div>
+      </section>
+
       {/* ── LIFE ON CAMPUS ────────────────────────────────────────────── */}
       <section className="py-24 md:py-36 px-8 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">

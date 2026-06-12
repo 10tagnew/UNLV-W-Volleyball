@@ -6,6 +6,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { ArrowRight, ArrowDown } from "lucide-react";
+import { Link } from "wouter";
 import heroRef from "@assets/UNLV_Volleyball_—_Stadium_Energy_Homepage_1777519729850.jpg";
 import VimeoBackground from "@/components/VimeoBackground";
 import { useEffect } from "react";
@@ -281,6 +282,59 @@ export default function StadiumEnergy() {
 
       {/* ── PARALLAX QUOTE SECTION ───────────────────────────────────── */}
       <ParallaxQuote />
+
+      {/* ── CAMPUS LIFE VIDEO CALLOUT ────────────────────────────────── */}
+      <section className="relative h-[100dvh] overflow-hidden flex items-end">
+        {/* YouTube full-bleed */}
+        <div className="absolute inset-0 z-0 bg-black overflow-hidden">
+          <iframe
+            src="https://www.youtube.com/embed/mXbKLPD-rx0?autoplay=1&mute=1&loop=1&playlist=mXbKLPD-rx0&controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0"
+            allow="autoplay; encrypted-media"
+            title="UNLV campus"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            style={{ width: "100vw", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080000]/90 via-[#080000]/35 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080000]/70 via-transparent to-transparent" />
+        </div>
+
+        <motion.div
+          className="relative z-10 px-8 md:px-16 pb-20 md:pb-28 max-w-6xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-10 h-[2px] bg-[#CC0000]" />
+            <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
+              Life as a Rebel
+            </p>
+          </div>
+
+          <h2
+            className="font-['Bebas_Neue'] text-white leading-[0.88] mb-10"
+            style={{ fontSize: "clamp(4rem, 13vw, 13rem)" }}
+          >
+            Where Rebels
+            <br />
+            <span style={{ WebkitTextStroke: "2px #CC0000", color: "transparent" }}>
+              Thrive
+            </span>
+          </h2>
+
+          <Link href="/campus-life">
+            <motion.span
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="group inline-flex items-center gap-4 bg-[#CC0000] hover:bg-white text-white hover:text-black px-10 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors duration-300 cursor-pointer"
+            >
+              Explore Campus Life
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </motion.span>
+          </Link>
+        </motion.div>
+      </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
       <section className="py-40 px-8 md:px-16 relative overflow-hidden bg-[#080000]">
