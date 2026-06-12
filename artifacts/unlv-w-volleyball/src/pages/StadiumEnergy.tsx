@@ -69,14 +69,24 @@ function WordReveal({ text, className }: { text: string; className?: string }) {
 }
 
 const ROSTER = [
-  { number: "1",  name: "Jada Ingram",         pos: "OH", position: "Outside Hitter", height: "",      year: "Junior",   hometown: "Topeka, KS" },
-  { number: "6",  name: "Kennedy Peery",        pos: "S",  position: "Setter",         height: "",      year: "Senior",   hometown: "" },
-  { number: "8",  name: "Caleigh King",         pos: "L",  position: "Libero",         height: "5'6\"", year: "Junior",   hometown: "Southlake, TX" },
-  { number: "9",  name: "Rheanna Deen-Jackson", pos: "MB", position: "Middle Blocker", height: "6'1\"", year: "Junior",   hometown: "Houston, TX" },
-  { number: "10", name: "Alondra Alarcon",      pos: "OH", position: "Outside Hitter", height: "5'11\"",year: "Senior",   hometown: "Lima, Peru" },
-  { number: "19", name: "Agata Makowska",       pos: "S",  position: "Setter",         height: "5'10\"",year: "Junior",   hometown: "Poznan, Poland" },
-  { number: "20", name: "Isha Knight",          pos: "L",  position: "Libero",         height: "5'7\"", year: "Graduate", hometown: "Mililani, HI" },
-  { number: "21", name: "Basia Latos",          pos: "OH", position: "Outside Hitter", height: "5'11\"",year: "Junior",   hometown: "Łazy, Poland" },
+  { number: "0",  name: "Alexa Ankerstar",      pos: "S",      position: "Setter",         height: "5'10\"", year: "Sophomore",       hometown: "Round Rock, TX" },
+  { number: "1",  name: "Jada Ingram",          pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Junior",          hometown: "Topeka, KS" },
+  { number: "2",  name: "Kadence Wilson",       pos: "L",      position: "Libero",         height: "5'8\"",  year: "Freshman",        hometown: "Honolulu, HI" },
+  { number: "3",  name: "Tia Traudt",           pos: "OH",     position: "Outside Hitter", height: "6'3\"",  year: "Sophomore",       hometown: "Grand Island, NE" },
+  { number: "4",  name: "Cami Christiansen",    pos: "OPP",    position: "Opposite",       height: "6'3\"",  year: "Junior",          hometown: "Cedar Hills, UT" },
+  { number: "5",  name: "Arrie Brown",          pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Freshman",        hometown: "Tulsa, OK" },
+  { number: "6",  name: "Kamiera Watkins",      pos: "OPP/MB", position: "Opp / Mid",      height: "6'0\"",  year: "Senior",          hometown: "Euless, TX" },
+  { number: "7",  name: "Julie Beckham",        pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Freshman",        hometown: "Henderson, NV" },
+  { number: "8",  name: "Caleigh King",         pos: "L",      position: "Libero",         height: "5'6\"",  year: "Senior",          hometown: "Southlake, TX" },
+  { number: "9",  name: "Rheanna Deen-Jackson", pos: "MB",     position: "Middle Blocker", height: "6'1\"",  year: "Junior",          hometown: "Houston, TX" },
+  { number: "10", name: "Natalie Monroe",       pos: "OH",     position: "Outside Hitter", height: "6'2\"",  year: "Freshman",        hometown: "Santa Cruz, CA" },
+  { number: "11", name: "Logan Lindsay",        pos: "OPP",    position: "Opposite",       height: "6'2\"",  year: "Senior",          hometown: "Layton, UT" },
+  { number: "15", name: "Jaida Harris",         pos: "OH",     position: "Outside Hitter", height: "6'2\"",  year: "RS Junior",       hometown: "Las Vegas, NV" },
+  { number: "16", name: "Sloan Cleveland",      pos: "L",      position: "Libero",         height: "5'7\"",  year: "Sophomore",       hometown: "Prosper, TX" },
+  { number: "18", name: "Brooklynn Williams",   pos: "MB",     position: "Middle Blocker", height: "5'11\"", year: "Sophomore",       hometown: "Las Vegas, NV" },
+  { number: "19", name: "Kamryn Scroggins",     pos: "S",      position: "Setter",         height: "5'9\"",  year: "Graduate",        hometown: "Pearland, TX" },
+  { number: "21", name: "Basia Latos",          pos: "OH",     position: "Outside Hitter", height: "5'11\"", year: "Junior",          hometown: "Łazy, Poland" },
+  { number: "22", name: "Kaia Thiele",          pos: "S",      position: "Setter",         height: "5'11\"", year: "Sophomore",       hometown: "San Antonio, TX" },
 ];
 
 
@@ -309,7 +319,7 @@ export default function StadiumEnergy() {
           <div className="flex items-center gap-4 mb-10">
             <div className="w-10 h-[2px] bg-[#CC0000]" />
             <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
-              2025 Season
+              2026 Season
             </p>
           </div>
 
@@ -320,7 +330,7 @@ export default function StadiumEnergy() {
             <WordReveal text="Starting Roster." />
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5">
             {ROSTER.map((player, i) => (
               <motion.div
                 key={player.name}
