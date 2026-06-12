@@ -493,7 +493,7 @@ export default function StadiumEnergy() {
               className="relative"
             >
               <img
-                src="/coach-shoji.jpg"
+                src="/Screen Shot 2026-06-12 at 5.17.49 PM.png"
                 alt="Malia Shoji, Head Coach"
                 className="w-full object-cover object-top"
                 style={{ maxHeight: "600px" }}
