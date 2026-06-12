@@ -69,24 +69,24 @@ function WordReveal({ text, className }: { text: string; className?: string }) {
 }
 
 const ROSTER = [
-  { number: "0",  name: "Alexa Ankerstar",      pos: "S",      position: "Setter",         height: "5'10\"", year: "Sophomore",       hometown: "Round Rock, TX" },
-  { number: "1",  name: "Jada Ingram",          pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Junior",          hometown: "Topeka, KS" },
-  { number: "2",  name: "Kadence Wilson",       pos: "L",      position: "Libero",         height: "5'8\"",  year: "Freshman",        hometown: "Honolulu, HI" },
-  { number: "3",  name: "Tia Traudt",           pos: "OH",     position: "Outside Hitter", height: "6'3\"",  year: "Sophomore",       hometown: "Grand Island, NE" },
-  { number: "4",  name: "Cami Christiansen",    pos: "OPP",    position: "Opposite",       height: "6'3\"",  year: "Junior",          hometown: "Cedar Hills, UT" },
-  { number: "5",  name: "Arrie Brown",          pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Freshman",        hometown: "Tulsa, OK" },
-  { number: "6",  name: "Kamiera Watkins",      pos: "OPP/MB", position: "Opp / Mid",      height: "6'0\"",  year: "Senior",          hometown: "Euless, TX" },
-  { number: "7",  name: "Julie Beckham",        pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Freshman",        hometown: "Henderson, NV" },
-  { number: "8",  name: "Caleigh King",         pos: "L",      position: "Libero",         height: "5'6\"",  year: "Senior",          hometown: "Southlake, TX" },
-  { number: "9",  name: "Rheanna Deen-Jackson", pos: "MB",     position: "Middle Blocker", height: "6'1\"",  year: "Junior",          hometown: "Houston, TX" },
-  { number: "10", name: "Natalie Monroe",       pos: "OH",     position: "Outside Hitter", height: "6'2\"",  year: "Freshman",        hometown: "Santa Cruz, CA" },
-  { number: "11", name: "Logan Lindsay",        pos: "OPP",    position: "Opposite",       height: "6'2\"",  year: "Senior",          hometown: "Layton, UT" },
-  { number: "15", name: "Jaida Harris",         pos: "OH",     position: "Outside Hitter", height: "6'2\"",  year: "RS Junior",       hometown: "Las Vegas, NV" },
-  { number: "16", name: "Sloan Cleveland",      pos: "L",      position: "Libero",         height: "5'7\"",  year: "Sophomore",       hometown: "Prosper, TX" },
-  { number: "18", name: "Brooklynn Williams",   pos: "MB",     position: "Middle Blocker", height: "5'11\"", year: "Sophomore",       hometown: "Las Vegas, NV" },
-  { number: "19", name: "Kamryn Scroggins",     pos: "S",      position: "Setter",         height: "5'9\"",  year: "Graduate",        hometown: "Pearland, TX" },
-  { number: "21", name: "Basia Latos",          pos: "OH",     position: "Outside Hitter", height: "5'11\"", year: "Junior",          hometown: "Łazy, Poland" },
-  { number: "22", name: "Kaia Thiele",          pos: "S",      position: "Setter",         height: "5'11\"", year: "Sophomore",       hometown: "San Antonio, TX" },
+  { number: "0",  name: "Alexa Ankerstar",      pos: "S",      position: "Setter",         height: "5'10\"", year: "Sophomore",  hometown: "Round Rock, TX",   video: "/Alexa Ankerstar.mp4" },
+  { number: "1",  name: "Jada Ingram",          pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Junior",     hometown: "Topeka, KS",       video: "/Jada Ingram.mp4" },
+  { number: "2",  name: "Kadence Wilson",       pos: "L",      position: "Libero",         height: "5'8\"",  year: "Freshman",   hometown: "Honolulu, HI",     video: "" },
+  { number: "3",  name: "Tia Traudt",           pos: "OH",     position: "Outside Hitter", height: "6'3\"",  year: "Sophomore",  hometown: "Grand Island, NE", video: "/Tia Traudt.mp4" },
+  { number: "4",  name: "Cami Christiansen",    pos: "OPP",    position: "Opposite",       height: "6'3\"",  year: "Junior",     hometown: "Cedar Hills, UT",  video: "" },
+  { number: "5",  name: "Arrie Brown",          pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Freshman",   hometown: "Tulsa, OK",        video: "" },
+  { number: "6",  name: "Kamiera Watkins",      pos: "OPP/MB", position: "Opp / Mid",      height: "6'0\"",  year: "Senior",     hometown: "Euless, TX",       video: "" },
+  { number: "7",  name: "Julie Beckham",        pos: "OH",     position: "Outside Hitter", height: "6'0\"",  year: "Freshman",   hometown: "Henderson, NV",    video: "" },
+  { number: "8",  name: "Caleigh King",         pos: "L",      position: "Libero",         height: "5'6\"",  year: "Senior",     hometown: "Southlake, TX",    video: "/Caleigh King.mp4" },
+  { number: "9",  name: "Rheanna Deen-Jackson", pos: "MB",     position: "Middle Blocker", height: "6'1\"",  year: "Junior",     hometown: "Houston, TX",      video: "/Rheanna Deen-Jackson.mp4" },
+  { number: "10", name: "Natalie Monroe",       pos: "OH",     position: "Outside Hitter", height: "6'2\"",  year: "Freshman",   hometown: "Santa Cruz, CA",   video: "" },
+  { number: "11", name: "Logan Lindsay",        pos: "OPP",    position: "Opposite",       height: "6'2\"",  year: "Senior",     hometown: "Layton, UT",       video: "/Logan Lindsey.mp4" },
+  { number: "15", name: "Jaida Harris",         pos: "OH",     position: "Outside Hitter", height: "6'2\"",  year: "RS Junior",  hometown: "Las Vegas, NV",    video: "/Jaida Harris.mp4" },
+  { number: "16", name: "Sloan Cleveland",      pos: "L",      position: "Libero",         height: "5'7\"",  year: "Sophomore",  hometown: "Prosper, TX",      video: "/Sloan Cleveland.mp4" },
+  { number: "18", name: "Brooklynn Williams",   pos: "MB",     position: "Middle Blocker", height: "5'11\"", year: "Sophomore",  hometown: "Las Vegas, NV",    video: "/Brooklynn Willams.mp4" },
+  { number: "19", name: "Kamryn Scroggins",     pos: "S",      position: "Setter",         height: "5'9\"",  year: "Graduate",   hometown: "Pearland, TX",     video: "" },
+  { number: "21", name: "Basia Latos",          pos: "OH",     position: "Outside Hitter", height: "5'11\"", year: "Junior",     hometown: "Łazy, Poland",     video: "/Basia Latos.mp4" },
+  { number: "22", name: "Kaia Thiele",          pos: "S",      position: "Setter",         height: "5'11\"", year: "Sophomore",  hometown: "San Antonio, TX",  video: "/Kaia Theile.mp4" },
 ];
 
 
@@ -330,45 +330,64 @@ export default function StadiumEnergy() {
             <WordReveal text="Starting Roster." />
           </h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
             {ROSTER.map((player, i) => (
               <motion.div
                 key={player.name}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.55, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                className="group border border-white/10 bg-white/[0.04] backdrop-blur-sm p-5 hover:border-[#CC0000]/50 transition-colors duration-300"
+                transition={{ duration: 0.55, delay: (i % 6) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative overflow-hidden"
+                style={{ aspectRatio: "2/3" }}
               >
-                <div
-                  className="font-['Bebas_Neue'] text-white/8 group-hover:text-[#CC0000]/15 transition-colors leading-none mb-3 select-none"
-                  style={{ fontSize: "clamp(3.5rem, 6vw, 5.5rem)" }}
-                >
-                  {player.number}
-                </div>
-                <div className="font-['Bebas_Neue'] text-white text-xl md:text-2xl leading-[1.05] mb-3 group-hover:text-[#CC0000] transition-colors">
-                  {player.name}
-                </div>
-                <div className="inline-flex items-center gap-1.5 mb-4">
-                  <span className="font-['Inter'] text-[8px] font-bold tracking-[0.35em] text-[#CC0000] uppercase border border-[#CC0000]/30 px-2 py-0.5">
-                    {player.pos}
-                  </span>
-                  <span className="font-['Inter'] text-[8px] tracking-[0.2em] text-white/30 uppercase">
-                    {player.position}
-                  </span>
-                </div>
-                <div className="space-y-1 border-t border-white/8 pt-3">
-                  {player.height && (
-                    <p className="font-['Inter'] text-[10px] text-white/50">
-                      {player.height} · {player.year}
-                    </p>
-                  )}
-                  {!player.height && (
-                    <p className="font-['Inter'] text-[10px] text-white/50">{player.year}</p>
-                  )}
-                  {player.hometown && (
-                    <p className="font-['Inter'] text-[10px] text-white/30">{player.hometown}</p>
-                  )}
+                {/* Video or dark bg */}
+                {player.video ? (
+                  <video
+                    src={player.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-[#0d0d0d]" />
+                )}
+
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
+
+                {/* Red top accent on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#CC0000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+
+                {/* Content pinned to bottom */}
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <div
+                    className="font-['Bebas_Neue'] text-white/15 leading-none select-none group-hover:text-[#CC0000]/25 transition-colors"
+                    style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)" }}
+                  >
+                    {player.number}
+                  </div>
+                  <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
+                    style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
+                  >
+                    {player.name}
+                  </div>
+                  <div className="flex items-center gap-1.5 mb-2 flex-wrap">
+                    <span className="font-['Inter'] text-[7px] font-bold tracking-[0.3em] text-[#CC0000] uppercase border border-[#CC0000]/40 px-1.5 py-0.5">
+                      {player.pos}
+                    </span>
+                    <span className="font-['Inter'] text-[7px] tracking-[0.15em] text-white/35 uppercase">
+                      {player.height}
+                    </span>
+                  </div>
+                  <div className="border-t border-white/10 pt-2 space-y-0.5">
+                    <p className="font-['Inter'] text-[9px] text-white/50">{player.year}</p>
+                    {player.hometown && (
+                      <p className="font-['Inter'] text-[9px] text-white/30">{player.hometown}</p>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
