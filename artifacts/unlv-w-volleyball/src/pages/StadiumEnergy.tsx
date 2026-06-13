@@ -666,25 +666,15 @@ export default function StadiumEnergy() {
 
           <div className="flex flex-col sm:flex-row items-start gap-6">
             <motion.a
-              href="https://unlvrebels.com/sports/womens-volleyball"
+              href="https://form.typeform.com/to/b58w99Bc"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="group inline-flex items-center gap-4 bg-[#CC0000] hover:bg-white text-white hover:text-black px-10 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors duration-300"
+              className="group inline-flex items-center gap-4 bg-[#CC0000] hover:bg-[#a80000] text-white px-10 py-5 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors duration-300"
             >
-              Start Your Journey
+              Ready to Be a Rebel?
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
-            <motion.a
-              href="https://vimeo.com/1187950924"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-4 border border-white/20 hover:border-white/60 text-white/60 hover:text-white px-10 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-all duration-300"
-            >
-              Watch Highlights
             </motion.a>
           </div>
         </div>
