@@ -139,7 +139,7 @@ export default function StadiumEnergy() {
 
         {/* Layer 3 — Hero text (fastest — exits first) */}
         <motion.div
-          className="absolute z-20 bottom-20 md:bottom-28 left-0 right-0 px-8 md:px-16 top-[5rem] flex flex-col justify-end overflow-hidden"
+          className="absolute z-20 bottom-20 md:bottom-28 left-0 right-0 px-8 md:px-16 top-[5rem] flex flex-col justify-end items-start overflow-hidden"
           style={{ y: heroTextY, opacity: heroOpacity }}
         >
           {/* Eyebrow */}
