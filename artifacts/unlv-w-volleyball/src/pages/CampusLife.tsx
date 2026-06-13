@@ -132,15 +132,26 @@ export default function CampusLife() {
               At UNLV, your college experience is rooted in one of the most livable regions in the American West. The greater Las Vegas Valley stretches from master-planned Summerlin to family-friendly Henderson, with mountain escapes at Mount Charleston and resort living at Lake Las Vegas just a short drive from campus.
             </p>
 
-            <a
-              href="https://www.unlv.edu/student-life"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors"
-            >
-              See Campus Life
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://www.unlv.edu/student-life"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors"
+              >
+                See Campus Life
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="https://form.typeform.com/to/b58w99Bc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/60 px-10 py-4 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors"
+              >
+                Ready to Be a Rebel?
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -351,12 +362,12 @@ export default function CampusLife() {
               Life as a Rebel is unlike anything else in college volleyball. The campus, the city, the program. It all comes together here. Come see it for yourself.
             </p>
             <a
-              href="https://unlvrebels.com/sports/womens-volleyball"
+              href="https://form.typeform.com/to/b58w99Bc"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-white text-[#CC0000] px-12 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#0d0d0d] hover:text-white transition-colors"
+              className="group inline-flex items-center gap-3 bg-white text-[#CC0000] px-12 py-5 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#0d0d0d] hover:text-white transition-colors"
             >
-              Get Recruited
+              Ready to Be a Rebel?
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>

@@ -99,12 +99,12 @@ export default function Arena() {
             </p>
 
             <a
-              href="https://unlvrebels.com/sports/womens-volleyball"
+              href="https://form.typeform.com/to/b58w99Bc"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors"
+              className="group inline-flex items-center gap-3 bg-[#CC0000] text-white px-10 py-4 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase hover:bg-[#a80000] transition-colors"
             >
-              Get Recruited
+              Ready to Be a Rebel?
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>

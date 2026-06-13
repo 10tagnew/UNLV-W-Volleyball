@@ -193,12 +193,26 @@ export default function StadiumEnergy() {
             UNLV Women's Volleyball, where champions are built every day.
           </motion.p>
 
+          {/* Hero CTA */}
+          <motion.a
+            href="https://form.typeform.com/to/b58w99Bc"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="group inline-flex items-center gap-3 mt-8 bg-[#CC0000] hover:bg-[#a80000] text-white px-8 py-4 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors"
+          >
+            Ready to Be a Rebel?
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </motion.a>
+
           {/* Scroll cue */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex items-center gap-3 mt-10"
+            className="flex items-center gap-3 mt-8"
           >
             <motion.div
               animate={{ y: [0, 6, 0] }}
@@ -404,10 +418,16 @@ export default function StadiumEnergy() {
           </div>
 
           <h2
-            className="font-['Bebas_Neue'] text-white leading-[0.88] mb-14"
-            style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
+            className="font-['Bebas_Neue'] leading-[0.88] mb-14"
+            style={{ fontSize: "clamp(3.5rem, 10vw, 11rem)" }}
           >
-            <WordReveal text="The Starting Rebel Lineup." />
+            <span className="block text-white">Rebel</span>
+            <span
+              className="block"
+              style={{ WebkitTextStroke: "2px #CC0000", color: "transparent" }}
+            >
+              Starting Lineup
+            </span>
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
