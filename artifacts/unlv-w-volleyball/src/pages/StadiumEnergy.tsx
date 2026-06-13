@@ -159,7 +159,7 @@ export default function StadiumEnergy() {
           <div className="overflow-hidden mb-2">
             <motion.h1
               className="font-['Bebas_Neue'] leading-[0.85] text-white"
-              style={{ fontSize: "clamp(5rem, 18vw, 18rem)" }}
+              style={{ fontSize: "clamp(4rem, 13vw, 13rem)" }}
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 1.0, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
@@ -171,7 +171,7 @@ export default function StadiumEnergy() {
             <motion.h1
               className="font-['Bebas_Neue'] leading-[0.85]"
               style={{
-                fontSize: "clamp(5rem, 18vw, 18rem)",
+                fontSize: "clamp(4rem, 13vw, 13rem)",
                 WebkitTextStroke: "2px #CC0000",
                 color: "transparent",
               }}
@@ -183,16 +183,6 @@ export default function StadiumEnergy() {
             </motion.h1>
           </div>
 
-          {/* Sub-line */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
-            className="font-['Inter'] text-sm md:text-base text-white/50 font-light tracking-widest mt-8 max-w-sm"
-          >
-            UNLV Women's Volleyball, where champions are built every day.
-          </motion.p>
-
           {/* Hero CTA */}
           <motion.a
             href="https://form.typeform.com/to/b58w99Bc"
@@ -200,7 +190,7 @@ export default function StadiumEnergy() {
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
             className="group inline-flex items-center gap-3 mt-8 bg-[#CC0000] hover:bg-[#a80000] text-white px-8 py-4 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors"
           >
             Ready to Be a Rebel?
