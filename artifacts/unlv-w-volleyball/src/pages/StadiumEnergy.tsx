@@ -120,7 +120,7 @@ export default function StadiumEnergy() {
     <div className="min-h-screen w-full bg-[#080000] text-white selection:bg-[#CC0000] selection:text-white overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative h-[100dvh] w-full flex items-end justify-start overflow-hidden">
+      <section className="relative h-[100dvh] w-full overflow-hidden">
 
         {/* Layer 1 — Background video (slowest) */}
         <motion.div
@@ -139,7 +139,7 @@ export default function StadiumEnergy() {
 
         {/* Layer 3 — Hero text (fastest — exits first) */}
         <motion.div
-          className="relative z-20 w-full px-8 md:px-16 pb-20 md:pb-28"
+          className="absolute z-20 bottom-20 md:bottom-28 left-0 right-0 px-8 md:px-16 top-[5rem] flex flex-col justify-end overflow-hidden"
           style={{ y: heroTextY, opacity: heroOpacity }}
         >
           {/* Eyebrow */}
@@ -412,53 +412,7 @@ export default function StadiumEnergy() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
             {ROSTER.filter(p => p.video).map((player, i) => (
-              <motion.div
-                key={player.name}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.55, delay: (i % 6) * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative overflow-hidden"
-                style={{ aspectRatio: "2/3" }}
-              >
-                <video
-                  src={player.video}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
-
-                {/* Red top accent on hover */}
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#CC0000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-
-                {/* Content pinned to bottom */}
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
-                    style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
-                  >
-                    {player.name}
-                  </div>
-                  <div className="flex items-center gap-1.5 mb-2 flex-wrap">
-                    <span className="font-['Inter'] text-[7px] font-bold tracking-[0.3em] text-[#CC0000] uppercase border border-[#CC0000]/40 px-1.5 py-0.5">
-                      {player.pos}
-                    </span>
-                    <span className="font-['Inter'] text-[7px] tracking-[0.15em] text-white/35 uppercase">
-                      {player.height}
-                    </span>
-                  </div>
-                  <div className="border-t border-white/10 pt-2 space-y-0.5">
-                    <p className="font-['Inter'] text-[9px] text-white/50">{player.year}</p>
-                    {player.hometown && (
-                      <p className="font-['Inter'] text-[9px] text-white/30">{player.hometown}</p>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
+              <PlayerCard key={player.name} player={player} index={i} />
             ))}
           </div>
         </div>
@@ -666,25 +620,15 @@ export default function StadiumEnergy() {
 
           <div className="flex flex-col sm:flex-row items-start gap-6">
             <motion.a
-              href="https://unlvrebels.com/sports/womens-volleyball"
+              href="https://form.typeform.com/to/b58w99Bc"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="group inline-flex items-center gap-4 bg-[#CC0000] hover:bg-white text-white hover:text-black px-10 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors duration-300"
+              className="group inline-flex items-center gap-4 bg-[#CC0000] hover:bg-[#a80000] text-white px-10 py-5 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors duration-300"
             >
-              Start Your Journey
+              Ready to Be a Rebel?
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
-            <motion.a
-              href="https://vimeo.com/1187950924"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-4 border border-white/20 hover:border-white/60 text-white/60 hover:text-white px-10 py-5 font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-all duration-300"
-            >
-              Watch Highlights
             </motion.a>
           </div>
         </div>
@@ -712,6 +656,56 @@ export default function StadiumEnergy() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ── Player Card ────────────────────────────────────────────────────── */
+function PlayerCard({ player, index }: { player: typeof ROSTER[0]; index: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, delay: (index % 6) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative overflow-hidden cursor-pointer"
+      style={{ aspectRatio: "2/3" }}
+      onMouseEnter={() => videoRef.current?.play()}
+      onMouseLeave={() => { if (videoRef.current) { videoRef.current.pause(); videoRef.current.currentTime = 0; } }}
+    >
+      <video
+        ref={videoRef}
+        src={player.video}
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#CC0000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      <div className="absolute inset-x-0 bottom-0 p-4">
+        <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
+          style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
+        >
+          {player.name}
+        </div>
+        <div className="flex items-center gap-1.5 mb-2 flex-wrap">
+          <span className="font-['Inter'] text-[7px] font-bold tracking-[0.3em] text-[#CC0000] uppercase border border-[#CC0000]/40 px-1.5 py-0.5">
+            {player.pos}
+          </span>
+          <span className="font-['Inter'] text-[7px] tracking-[0.15em] text-white/35 uppercase">
+            {player.height}
+          </span>
+        </div>
+        <div className="border-t border-white/10 pt-2 space-y-0.5">
+          <p className="font-['Inter'] text-[9px] text-white/50">{player.year}</p>
+          {player.hometown && (
+            <p className="font-['Inter'] text-[9px] text-white/30">{player.hometown}</p>
+          )}
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
