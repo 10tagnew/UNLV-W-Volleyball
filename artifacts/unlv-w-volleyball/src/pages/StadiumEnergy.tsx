@@ -404,10 +404,16 @@ export default function StadiumEnergy() {
           </div>
 
           <h2
-            className="font-['Bebas_Neue'] text-white leading-[0.88] mb-14"
-            style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
+            className="font-['Bebas_Neue'] leading-[0.88] mb-14"
+            style={{ fontSize: "clamp(3.5rem, 10vw, 11rem)" }}
           >
-            <WordReveal text="The Starting Rebel Lineup." />
+            <span className="block text-white">Rebel</span>
+            <span
+              className="block"
+              style={{ WebkitTextStroke: "2px #CC0000", color: "transparent" }}
+            >
+              Starting Lineup
+            </span>
           </h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
