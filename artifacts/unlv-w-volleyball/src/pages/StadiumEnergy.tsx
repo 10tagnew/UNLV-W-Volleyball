@@ -193,12 +193,26 @@ export default function StadiumEnergy() {
             UNLV Women's Volleyball, where champions are built every day.
           </motion.p>
 
+          {/* Hero CTA */}
+          <motion.a
+            href="https://form.typeform.com/to/b58w99Bc"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="group inline-flex items-center gap-3 mt-8 bg-[#CC0000] hover:bg-[#a80000] text-white px-8 py-4 rounded-full font-['Inter'] font-bold tracking-[0.15em] text-xs uppercase transition-colors"
+          >
+            Ready to Be a Rebel?
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </motion.a>
+
           {/* Scroll cue */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex items-center gap-3 mt-10"
+            className="flex items-center gap-3 mt-8"
           >
             <motion.div
               animate={{ y: [0, 6, 0] }}
