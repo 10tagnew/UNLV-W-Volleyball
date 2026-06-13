@@ -412,53 +412,7 @@ export default function StadiumEnergy() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
             {ROSTER.filter(p => p.video).map((player, i) => (
-              <motion.div
-                key={player.name}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.55, delay: (i % 6) * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative overflow-hidden"
-                style={{ aspectRatio: "2/3" }}
-              >
-                <video
-                  src={player.video}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
-
-                {/* Red top accent on hover */}
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#CC0000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-
-                {/* Content pinned to bottom */}
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
-                    style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
-                  >
-                    {player.name}
-                  </div>
-                  <div className="flex items-center gap-1.5 mb-2 flex-wrap">
-                    <span className="font-['Inter'] text-[7px] font-bold tracking-[0.3em] text-[#CC0000] uppercase border border-[#CC0000]/40 px-1.5 py-0.5">
-                      {player.pos}
-                    </span>
-                    <span className="font-['Inter'] text-[7px] tracking-[0.15em] text-white/35 uppercase">
-                      {player.height}
-                    </span>
-                  </div>
-                  <div className="border-t border-white/10 pt-2 space-y-0.5">
-                    <p className="font-['Inter'] text-[9px] text-white/50">{player.year}</p>
-                    {player.hometown && (
-                      <p className="font-['Inter'] text-[9px] text-white/30">{player.hometown}</p>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
+              <PlayerCard key={player.name} player={player} index={i} />
             ))}
           </div>
         </div>
@@ -702,6 +656,56 @@ export default function StadiumEnergy() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ── Player Card ────────────────────────────────────────────────────── */
+function PlayerCard({ player, index }: { player: typeof ROSTER[0]; index: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, delay: (index % 6) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative overflow-hidden cursor-pointer"
+      style={{ aspectRatio: "2/3" }}
+      onMouseEnter={() => videoRef.current?.play()}
+      onMouseLeave={() => { if (videoRef.current) { videoRef.current.pause(); videoRef.current.currentTime = 0; } }}
+    >
+      <video
+        ref={videoRef}
+        src={player.video}
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#CC0000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      <div className="absolute inset-x-0 bottom-0 p-4">
+        <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
+          style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
+        >
+          {player.name}
+        </div>
+        <div className="flex items-center gap-1.5 mb-2 flex-wrap">
+          <span className="font-['Inter'] text-[7px] font-bold tracking-[0.3em] text-[#CC0000] uppercase border border-[#CC0000]/40 px-1.5 py-0.5">
+            {player.pos}
+          </span>
+          <span className="font-['Inter'] text-[7px] tracking-[0.15em] text-white/35 uppercase">
+            {player.height}
+          </span>
+        </div>
+        <div className="border-t border-white/10 pt-2 space-y-0.5">
+          <p className="font-['Inter'] text-[9px] text-white/50">{player.year}</p>
+          {player.hometown && (
+            <p className="font-['Inter'] text-[9px] text-white/30">{player.hometown}</p>
+          )}
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
