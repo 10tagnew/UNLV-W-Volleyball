@@ -805,16 +805,10 @@ function ParallaxQuote() {
   const textY  = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
-    <section ref={ref} className="relative h-[60vh] overflow-hidden flex items-center">
-      {/* Parallax image layer */}
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <img
-          src={heroRef}
-          alt=""
-          aria-hidden
-          className="w-full h-[130%] object-cover object-top opacity-20 grayscale"
-        />
-        <div className="absolute inset-0 bg-[#080000]/70" />
+    <section ref={ref} className="relative py-24 md:py-36 overflow-hidden flex items-center bg-white">
+      {/* Subtle parallax tint layer */}
+      <motion.div className="absolute inset-0 z-0 pointer-events-none" style={{ y: bgY }}>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(204,0,0,0.05)_0%,transparent_70%)]" />
       </motion.div>
 
       {/* Text moves opposite direction */}
@@ -822,8 +816,9 @@ function ParallaxQuote() {
         className="relative z-10 px-8 md:px-16 max-w-4xl"
         style={{ y: textY }}
       >
+        <div className="w-10 h-[2px] bg-[#CC0000] mb-8" />
         <p
-          className="font-['Barlow_Condensed'] italic font-black text-white leading-[1.05]"
+          className="font-['Barlow_Condensed'] italic font-black text-[#0d0d0d] leading-[1.05]"
           style={{ fontSize: "clamp(2rem, 5.5vw, 5rem)" }}
         >
           "We are now working towards accomplishments that have never been done before."
