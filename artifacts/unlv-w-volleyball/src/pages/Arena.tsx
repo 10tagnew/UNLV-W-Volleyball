@@ -38,14 +38,14 @@ const STATS = [
   { number: "3,117", label: "Attendance Record" },
   { number: "4×", label: "MWC Championships" },
   { number: "2×", label: "NCAA Tournament" },
-  { number: "10K", label: "Thomas & Mack Cap." },
+  { number: "2,000", label: "The Pavilion Cap." },
   { number: "1", label: "Home Court Advantage" },
 ];
 
 const CHECKLIST = [
   "Championship banners hanging above the court",
   "One of the loudest home crowds in Mountain West volleyball",
-  "Single-game attendance record of 3,117 fans vs. Hawaii",
+  "Single-game attendance record of 3,117 fans vs. Hawaii (Sept. 17, 2024)",
   "State-of-the-art scoreboard and sound system",
   "Located directly on the UNLV campus — no commute",
   "Thomas & Mack Center nearby for marquee matchups",
@@ -65,7 +65,7 @@ export default function Arena() {
         <div className="absolute inset-0 z-0">
           <img
             src="/Screen Shot 2026-06-12 at 4.25.25 PM.png"
-            alt="Cox Pavilion — UNLV Volleyball"
+            alt="The Pavilion — UNLV Volleyball"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#080000] via-[#080000]/50 to-[#080000]/20" />
@@ -81,7 +81,7 @@ export default function Arena() {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-[2px] bg-[#CC0000]" />
               <p className="font-['Inter'] text-[10px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
-                Cox Pavilion · Las Vegas, Nevada
+                The Pavilion · Las Vegas, Nevada
               </p>
             </div>
 
@@ -95,7 +95,7 @@ export default function Arena() {
             </h1>
 
             <p className="font-['Inter'] text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mb-10 font-light">
-              This is Cox Pavilion — UNLV Volleyball's home court. Championship banners hang from the rafters. The crowd is electric. And every night you play here, you play in front of one of the most passionate fan bases in the Mountain West.
+              This is The Pavilion — UNLV Volleyball's home court. Championship banners hang from the rafters. The crowd is electric. And every night you play here, you play in front of one of the most passionate fan bases in the Mountain West.
             </p>
 
             <a
@@ -152,10 +152,10 @@ export default function Arena() {
             className="pt-2"
           >
             <p className="font-['Inter'] text-base md:text-lg text-white/60 leading-relaxed font-light">
-              Cox Pavilion is not just a gym — it is a statement. Championship banners from MWC and NCAA Tournament runs hang above the court. The scoreboard is modern. The sound system is loud. And the fans who pack this building know volleyball.
+              The Pavilion is not just a gym — it is a statement. Championship banners from MWC and NCAA Tournament runs hang above the court. The scoreboard is modern. The sound system is loud. And the fans who pack this building know volleyball.
             </p>
             <p className="font-['Inter'] text-base md:text-lg text-white/40 leading-relaxed font-light mt-6">
-              When you suit up in Scarlet and Gray and walk out onto this floor, you feel it. There is history here. And there is room to add yours.
+              When you suit up in Scarlet &amp; Gray and walk out onto this floor, you feel it. There is history here. And there is room to add yours.
             </p>
           </motion.div>
         </div>
@@ -220,7 +220,7 @@ export default function Arena() {
               <br />Your Stage.
             </h2>
             <p className="font-['Inter'] text-lg md:text-xl text-white/75 leading-relaxed font-light max-w-2xl mb-12">
-              Stop imagining. Come see Cox Pavilion for yourself. Reach out to the coaching staff and take the first step toward playing in one of college volleyball's best home atmospheres.
+              Stop imagining. Come see The Pavilion for yourself. Reach out to the coaching staff and take the first step toward playing in one of college volleyball's best home atmospheres.
             </p>
             <a
               href="https://unlvrebels.com/sports/womens-volleyball"

@@ -277,8 +277,8 @@ export default function StadiumEnergy() {
           {[
             { number: "3×", label: "MWC Championships", sub: "& counting" },
             { number: "25+", label: "All-Americans", sub: "produced" },
-            { number: "Top 25", label: "National Ranking", sub: "consistently" },
-            { number: "10K", label: "Arena Capacity", sub: "Thomas & Mack" },
+            { number: "50+", label: "All-Conference Honorees", sub: "& counting" },
+            { number: "2,000", label: "Arena Capacity", sub: "The Pavilion" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -326,7 +326,7 @@ export default function StadiumEnergy() {
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-[2px] bg-[#CC0000]" />
               <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
-                Cox Pavilion · Las Vegas
+                The Pavilion · Las Vegas
               </p>
             </div>
             <h2
@@ -411,12 +411,12 @@ export default function StadiumEnergy() {
             className="font-['Bebas_Neue'] leading-[0.88] mb-14"
             style={{ fontSize: "clamp(3.5rem, 10vw, 11rem)" }}
           >
-            <span className="block text-white">Rebel</span>
+            <span className="block text-white">Key</span>
             <span
               className="block"
               style={{ WebkitTextStroke: "2px #CC0000", color: "transparent" }}
             >
-              Starting Lineup
+              Returners
             </span>
           </h2>
 
@@ -479,7 +479,7 @@ export default function StadiumEnergy() {
               <ul className="space-y-4">
                 {[
                   "Set a single-season team hitting percentage record",
-                  "Single game home attendance record vs. Hawaii — 3,117 fans",
+                  "Single game home attendance record vs. Hawaii — 3,117 fans (Sept. 17, 2024)",
                   "6 out of 7 postseason appearances",
                   "3rd UNLV coach with 18+ wins in her first season",
                 ].map((item, i) => (
