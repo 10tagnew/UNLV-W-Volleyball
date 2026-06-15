@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -223,12 +223,12 @@ export default function StadiumEnergy() {
       {/* ── PITCH SECTION ────────────────────────────────────────────── */}
       <section
         ref={pitchRef}
-        className="relative py-32 md:py-48 px-8 md:px-16 overflow-hidden bg-[#080000]"
+        className="relative py-32 md:py-48 px-8 md:px-16 overflow-hidden bg-white"
       >
         {/* Decorative background number */}
         <motion.span
           style={{ x: pitchX }}
-          className="absolute right-[-4vw] top-1/2 -translate-y-1/2 font-['Bebas_Neue'] text-[30vw] text-white/[0.03] select-none pointer-events-none leading-none"
+          className="absolute right-[-4vw] top-1/2 -translate-y-1/2 font-['Bebas_Neue'] text-[30vw] text-black/[0.04] select-none pointer-events-none leading-none"
         >
           26
         </motion.span>
@@ -242,7 +242,7 @@ export default function StadiumEnergy() {
           </div>
 
           <h2
-            className="font-['Bebas_Neue'] leading-[0.9] text-white mb-10"
+            className="font-['Bebas_Neue'] leading-[0.9] text-[#0d0d0d] mb-10"
             style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
           >
             <WordReveal text="Join the Rebellion." />
@@ -254,7 +254,7 @@ export default function StadiumEnergy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.8 }}
-              className="font-['Inter'] text-lg md:text-xl text-white/60 leading-relaxed font-light"
+              className="font-['Inter'] text-lg md:text-xl text-black/65 leading-relaxed font-light"
             >
               We are building something undeniable in Las Vegas: a culture of excellence, a relentless pursuit of greatness, and a sisterhood of athletes who demand more.
             </motion.p>
@@ -263,7 +263,7 @@ export default function StadiumEnergy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-['Inter'] text-base md:text-lg text-white/40 leading-relaxed font-light"
+              className="font-['Inter'] text-base md:text-lg text-black/45 leading-relaxed font-light"
             >
               The lights are bright. The stage is set. Las Vegas is the most electric sports city in America, and UNLV Volleyball plays in that energy every single night.
             </motion.p>
@@ -277,8 +277,8 @@ export default function StadiumEnergy() {
           {[
             { number: "3×", label: "MWC Championships", sub: "& counting" },
             { number: "25+", label: "All-Americans", sub: "produced" },
-            { number: "Top 25", label: "National Ranking", sub: "consistently" },
-            { number: "10K", label: "Arena Capacity", sub: "Thomas & Mack" },
+            { number: "50+", label: "All-Conference Honorees", sub: "& counting" },
+            { number: "2,000", label: "Arena Capacity", sub: "The Pavilion" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -326,7 +326,7 @@ export default function StadiumEnergy() {
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-[2px] bg-[#CC0000]" />
               <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
-                Cox Pavilion · Las Vegas
+                The Pavilion · Las Vegas
               </p>
             </div>
             <h2
@@ -411,12 +411,12 @@ export default function StadiumEnergy() {
             className="font-['Bebas_Neue'] leading-[0.88] mb-14"
             style={{ fontSize: "clamp(3.5rem, 10vw, 11rem)" }}
           >
-            <span className="block text-white">Rebel</span>
+            <span className="block text-white">Key</span>
             <span
               className="block"
               style={{ WebkitTextStroke: "2px #CC0000", color: "transparent" }}
             >
-              Starting Lineup
+              Returners
             </span>
           </h2>
 
@@ -474,30 +474,9 @@ export default function StadiumEnergy() {
                 Malia Shoji
               </h2>
               <p className="font-['Inter'] text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-6">
-                In Her First 2 Years
+                Year by Year
               </p>
-              <ul className="space-y-4">
-                {[
-                  "Set a single-season team hitting percentage record",
-                  "Single game home attendance record vs. Hawaii — 3,117 fans",
-                  "6 out of 7 postseason appearances",
-                  "3rd UNLV coach with 18+ wins in her first season",
-                ].map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
-                    className="flex items-start gap-4"
-                  >
-                    <div className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[#CC0000]" />
-                    <span className="font-['Inter'] text-base text-white/60 leading-relaxed font-light">
-                      {item}
-                    </span>
-                  </motion.li>
-                ))}
-              </ul>
+              <CoachTimeline />
             </motion.div>
           </div>
 
@@ -665,6 +644,101 @@ export default function StadiumEnergy() {
           </p>
         </div>
       </footer>
+    </div>
+  );
+}
+
+/* ── Coach Timeline ─────────────────────────────────────────────────── */
+const COACH_YEARS = [
+  {
+    label: "Year One",
+    year: "2023",
+    milestones: [
+      { headline: "Invited to NIVC Tournament", detail: "vs. Sacramento State", date: "Nov. 30, 2023" },
+      { headline: "Isabel Martin: Co-MW Player of the Year", detail: "First of the Year honor under Shoji", date: "Nov. 22, 2023" },
+    ],
+  },
+  {
+    label: "Year Two",
+    year: "2024",
+    milestones: [
+      { headline: "Sells Out The Pavilion", detail: "3-2 win against Hawai'i — first sell-out in program history", date: "Sept. 17, 2024 · 3,117 fans" },
+    ],
+  },
+  {
+    label: "Year Three",
+    year: "2025",
+    milestones: [
+      { headline: "Jaida Harris: MW Newcomer of the Year", detail: "Second Of the Year Honor under Shoji", date: "Nov. 25, 2025" },
+      { headline: "Caleigh King: 1,000 Dig Club", detail: "7th Member of 1,000 Dig Club at UNLV", date: "Nov. 22, 2025" },
+      { headline: "Record-Breaking Year in Academics", detail: "3.74 Semester GPA (Team Record) · 3.70 Cumulative GPA (Team Record) · 12 on Dean's Honor List", date: "2025–26" },
+    ],
+  },
+  {
+    label: "Year Four",
+    year: "2026",
+    milestones: [
+      { headline: "Opening 2026 Season at Players Era Volleyball Showcase", detail: "Aug. 29 vs Nebraska · Aug. 30 vs TCU", date: "Aug. 29–30, 2026" },
+    ],
+  },
+];
+
+function CoachTimeline() {
+  const [active, setActive] = useState(0);
+  const current = COACH_YEARS[active];
+
+  return (
+    <div>
+      {/* Tab buttons */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {COACH_YEARS.map((y, i) => (
+          <button
+            key={y.label}
+            onClick={() => setActive(i)}
+            className={`font-['Bebas_Neue'] text-lg tracking-wide px-4 py-2 transition-colors ${
+              i === active
+                ? "bg-[#CC0000] text-white"
+                : "bg-white/5 text-white/40 hover:text-white/70 hover:bg-white/10"
+            }`}
+          >
+            {y.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Cards */}
+      <motion.div
+        key={active}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="space-y-3"
+      >
+        {current.milestones.map((m, i) => (
+          <div key={i} className="bg-white/5 border border-white/8 p-5">
+            <p className="font-['Bebas_Neue'] text-white text-xl md:text-2xl leading-tight mb-1">
+              {m.headline}
+            </p>
+            {m.detail && (
+              <p className="font-['Inter'] text-xs text-white/50 leading-relaxed mb-2">{m.detail}</p>
+            )}
+            <p className="font-['Inter'] text-[10px] font-semibold tracking-[0.3em] text-[#CC0000] uppercase">
+              {m.date}
+            </p>
+          </div>
+        ))}
+      </motion.div>
+
+      {/* Dot nav */}
+      <div className="flex gap-2 mt-5">
+        {COACH_YEARS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`w-2 h-2 rounded-full transition-colors ${i === active ? "bg-[#CC0000]" : "bg-white/20"}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
