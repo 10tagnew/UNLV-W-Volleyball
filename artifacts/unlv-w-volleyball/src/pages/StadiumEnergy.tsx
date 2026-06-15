@@ -671,6 +671,14 @@ const COACH_YEARS = [
     milestones: [
       { headline: "Jaida Harris: MW Newcomer of the Year", detail: "Second Of the Year Honor under Shoji", date: "Nov. 25, 2025" },
       { headline: "Caleigh King: 1,000 Dig Club", detail: "7th Member of 1,000 Dig Club at UNLV", date: "Nov. 22, 2025" },
+      { headline: "Record-Breaking Year in Academics", detail: "3.74 Semester GPA (Team Record) · 3.70 Cumulative GPA (Team Record) · 12 on Dean's Honor List", date: "2025–26" },
+    ],
+  },
+  {
+    label: "Year Four",
+    year: "2026",
+    milestones: [
+      { headline: "Opening 2026 Season at Players Era Volleyball Showcase", detail: "Aug. 29 vs Nebraska · Aug. 30 vs TCU", date: "Aug. 29–30, 2026" },
     ],
   },
 ];
@@ -682,7 +690,7 @@ function CoachTimeline() {
   return (
     <div>
       {/* Tab buttons */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6">
         {COACH_YEARS.map((y, i) => (
           <button
             key={y.label}
