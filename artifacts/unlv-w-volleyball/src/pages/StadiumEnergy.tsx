@@ -340,8 +340,15 @@ export default function StadiumEnergy() {
       </section>
 
       {/* ── OUR VALUES ───────────────────────────────────────────────── */}
-      <section className="py-24 md:py-36 px-8 md:px-16 bg-[#080000] border-y border-white/5">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-24 md:py-36 px-8 md:px-16 bg-[#080000] border-y border-white/5 overflow-hidden">
+        {/* Holographic orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ background: "radial-gradient(circle, rgba(120,0,255,0.18) 0%, transparent 70%)" }} />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[100px]" style={{ background: "radial-gradient(circle, rgba(0,180,255,0.14) 0%, transparent 70%)" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full blur-[80px]" style={{ background: "radial-gradient(circle, rgba(204,0,100,0.12) 0%, transparent 70%)" }} />
+        </div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="flex items-center gap-4 mb-14">
             <div className="w-10 h-[2px] bg-[#CC0000]" />
             <p className="font-['Inter'] text-[9px] font-semibold tracking-[0.5em] text-[#CC0000] uppercase">
@@ -355,7 +362,7 @@ export default function StadiumEnergy() {
             <WordReveal text="Our Values." />
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-px bg-white/5">
+          <div className="grid md:grid-cols-3 gap-[1px]" style={{ background: "linear-gradient(135deg, rgba(120,0,255,0.25), rgba(0,180,255,0.2), rgba(204,0,100,0.2))" }}>
             {[
               { title: "Stay Together",    body: "Together we will always accomplish more." },
               { title: "Grow Together",    body: "Maximize every opportunity to grow." },
@@ -367,9 +374,11 @@ export default function StadiumEnergy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.12 }}
-                className="bg-[#080000] p-10 md:p-14 group"
+                className="bg-[#080000] p-10 md:p-14 group relative overflow-hidden"
               >
-                <div className="w-10 h-[3px] bg-[#CC0000] mb-8 group-hover:w-16 transition-all duration-300" />
+                {/* Per-card shimmer on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(120,0,255,0.06) 0%, rgba(0,180,255,0.05) 50%, rgba(204,0,100,0.06) 100%)" }} />
+                <div className="w-10 h-[3px] mb-8 group-hover:w-16 transition-all duration-300" style={{ background: "linear-gradient(90deg, #CC0000, #9933ff, #0099ff)" }} />
                 <h3
                   className="font-['Bebas_Neue'] text-white leading-none mb-6 group-hover:text-[#CC0000] transition-colors"
                   style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
@@ -396,7 +405,13 @@ export default function StadiumEnergy() {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
             style={{ width: "100vw", height: "56.25vw", minHeight: "100%", minWidth: "177.78vh" }}
           />
-          <div className="absolute inset-0 bg-[#080000]/88" />
+          <div className="absolute inset-0 bg-[#080000]/85" />
+          {/* Holographic color orbs */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-[10%] w-[450px] h-[450px] rounded-full blur-[130px]" style={{ background: "radial-gradient(circle, rgba(120,0,255,0.2) 0%, transparent 70%)" }} />
+            <div className="absolute bottom-1/4 right-[10%] w-[400px] h-[400px] rounded-full blur-[110px]" style={{ background: "radial-gradient(circle, rgba(0,200,220,0.15) 0%, transparent 70%)" }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full blur-[100px]" style={{ background: "radial-gradient(circle, rgba(200,0,120,0.12) 0%, transparent 70%)" }} />
+          </div>
         </div>
 
         <div className="relative z-10 py-24 md:py-36 px-8 md:px-16">
@@ -432,7 +447,13 @@ export default function StadiumEnergy() {
       <ParallaxQuote />
 
       {/* ── COACH MALIA SHOJI ────────────────────────────────────────── */}
-      <section className="bg-[#0a0000] py-24 md:py-36 px-8 md:px-16">
+      <section className="relative bg-[#0a0000] py-24 md:py-36 px-8 md:px-16 overflow-hidden">
+        {/* Holographic orbs */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[150px]" style={{ background: "radial-gradient(circle, rgba(0,180,255,0.1) 0%, transparent 70%)" }} />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[130px]" style={{ background: "radial-gradient(circle, rgba(120,0,255,0.12) 0%, transparent 70%)" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-[100px]" style={{ background: "radial-gradient(circle, rgba(204,0,80,0.08) 0%, transparent 70%)" }} />
+        </div>
         <div className="max-w-6xl mx-auto">
 
           {/* Bio row */}
@@ -510,7 +531,15 @@ export default function StadiumEnergy() {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="pt-2"
             >
-              <div className="font-['Bebas_Neue'] text-[#CC0000] mb-1" style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}>
+              <div
+                className="font-['Bebas_Neue'] mb-1"
+                style={{
+                  fontSize: "clamp(4rem, 10vw, 9rem)",
+                  background: "linear-gradient(135deg, #CC0000 0%, #cc33ff 40%, #0099ff 70%, #00ccaa 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 15+
               </div>
               <p className="font-['Inter'] text-[10px] font-bold tracking-[0.4em] text-white/50 uppercase mb-10">
@@ -523,7 +552,7 @@ export default function StadiumEnergy() {
                   "Mariena Hayden", "Chloe Thomas", "Arien Fafard",
                   "Gabrielle Arretche-Ramos",
                 ].map((name) => (
-                  <p key={name} className="font-['Barlow_Condensed'] text-sm font-black uppercase text-white/50 tracking-wide">
+                  <p key={name} className="font-['Barlow_Condensed'] text-sm font-black uppercase tracking-wide transition-colors hover:text-white/90" style={{ color: "rgba(255,255,255,0.45)" }}>
                     {name}
                   </p>
                 ))}
@@ -754,7 +783,7 @@ function PlayerCard({ player, index }: { player: typeof ROSTER[0]; index: number
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.55, delay: (index % 6) * 0.07, ease: [0.22, 1, 0.36, 1] }}
       className="group relative overflow-hidden cursor-pointer"
-      style={{ aspectRatio: "2/3" }}
+      style={{ aspectRatio: "2/3", boxShadow: "0 0 0 1px rgba(255,255,255,0.05)" }}
       onMouseEnter={() => videoRef.current?.play()}
       onMouseLeave={() => { if (videoRef.current) { videoRef.current.pause(); videoRef.current.currentTime = 0; } }}
     >
@@ -767,7 +796,9 @@ function PlayerCard({ player, index }: { player: typeof ROSTER[0]; index: number
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/10" />
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#CC0000] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+      {/* Holographic top bar + inset glow on hover */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ background: "linear-gradient(90deg, #CC0000, #9933ff, #00ccff)" }} />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ boxShadow: "inset 0 0 40px rgba(120,0,255,0.18), inset 0 0 80px rgba(0,180,255,0.08)" }} />
       <div className="absolute inset-x-0 bottom-0 p-4">
         <div className="font-['Bebas_Neue'] text-white leading-[1.0] group-hover:text-[#CC0000] transition-colors mb-2"
           style={{ fontSize: "clamp(1rem, 1.8vw, 1.35rem)" }}
